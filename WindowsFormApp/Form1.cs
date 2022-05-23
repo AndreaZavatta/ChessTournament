@@ -112,14 +112,19 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(connectionString))
             {
-                Persona persona = new Persona();
-                persona.Nome = tx_Nome.Text;
-                persona.Cognome = tx_Cognome.Text;
+                Persona persona = ctx.Persona.Where(q => q.Nome == tx_Nome.Text && q.Cognome == tx_Cognome.Text).FirstOrDefault();
+                if (persona == null)
+                {
+                    persona = new Persona();
+                    ctx.Persona.Add(persona);
+                    persona.Nome = tx_Nome.Text;
+                    persona.Cognome = tx_Cognome.Text;
+                }
+
                 persona.DataNascita = tx_DataNascita.Value;
                 persona.Email = tx_Email.Text;
-                ctx.Persona.Add(persona);
                 ctx.SaveChanges();
-          
+
             }
         }
 

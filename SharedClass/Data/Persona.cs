@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Context.Data
+{
+    [Table("Persona")]
+    public class Persona
+    {
+        [Key]
+        public int IdPersona { get; set; }
+        public string Nome { get; set; }
+        public string Cognome { get; set; }
+        public DateTime? DataNascita { get; set; }
+        public string Email { get; set; }
+
+        //[Display(Name = "Localita")]
+        //public int IdLocalita { get; set; }
+
+        //[ForeignKey("IdLocalita")]
+        //public virtual Localita Localita { get; set; }
+
+    }
+}

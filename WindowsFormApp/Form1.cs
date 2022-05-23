@@ -144,5 +144,21 @@ namespace WindowsFormApp
                 }
             }
         }
+
+        private void btn_Visualizza_Click(object sender, EventArgs e)
+        {
+            using (MyDbContext ctx = new MyDbContext(connectionString))
+            {
+                IQueryable<Persona> query = ctx.Persona;
+
+                if (!String.IsNullOrEmpty(tx_Cognome.Text))
+                    query = query.Where(q => q.Cognome == tx_Cognome.Text);
+                if (!String.IsNullOrEmpty(tx_Nome.Text))
+                    query = query.Where(q => q.Nome == tx_Nome.Text);
+
+                dg_Persone.DataSource = query.ToList();
+
+            }
+         }
     }
 }

@@ -29,7 +29,7 @@ namespace WindowsFormApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.bt_Salva = new System.Windows.Forms.Button();
+            this.btn_Salva = new System.Windows.Forms.Button();
             this.tx_Nome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,17 +39,24 @@ namespace WindowsFormApp
             this.tx_Email = new System.Windows.Forms.TextBox();
             this.tx_DataNascita = new System.Windows.Forms.DateTimePicker();
             this.btn_Elimina = new System.Windows.Forms.Button();
+            this.dg_Persone = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cognome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataNascita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Visualizza = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_Persone)).BeginInit();
             this.SuspendLayout();
             // 
-            // bt_Salva
+            // btn_Salva
             // 
-            this.bt_Salva.Location = new System.Drawing.Point(58, 222);
-            this.bt_Salva.Name = "bt_Salva";
-            this.bt_Salva.Size = new System.Drawing.Size(94, 29);
-            this.bt_Salva.TabIndex = 0;
-            this.bt_Salva.Text = "Salva";
-            this.bt_Salva.UseVisualStyleBackColor = true;
-            this.bt_Salva.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Salva.Location = new System.Drawing.Point(58, 222);
+            this.btn_Salva.Name = "btn_Salva";
+            this.btn_Salva.Size = new System.Drawing.Size(94, 29);
+            this.btn_Salva.TabIndex = 0;
+            this.btn_Salva.Text = "Salva";
+            this.btn_Salva.UseVisualStyleBackColor = true;
+            this.btn_Salva.Click += new System.EventHandler(this.button1_Click);
             // 
             // tx_Nome
             // 
@@ -126,11 +133,71 @@ namespace WindowsFormApp
             this.btn_Elimina.UseVisualStyleBackColor = true;
             this.btn_Elimina.Click += new System.EventHandler(this.btn_Elimina_Click);
             // 
+            // dg_Persone
+            // 
+            this.dg_Persone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_Persone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Cognome,
+            this.DataNascita,
+            this.Email});
+            this.dg_Persone.Location = new System.Drawing.Point(374, 57);
+            this.dg_Persone.Name = "dg_Persone";
+            this.dg_Persone.RowHeadersVisible = false;
+            this.dg_Persone.RowHeadersWidth = 51;
+            this.dg_Persone.RowTemplate.Height = 29;
+            this.dg_Persone.Size = new System.Drawing.Size(503, 188);
+            this.dg_Persone.TabIndex = 11;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 125;
+            // 
+            // Cognome
+            // 
+            this.Cognome.DataPropertyName = "Cognome";
+            this.Cognome.HeaderText = "Cognome";
+            this.Cognome.MinimumWidth = 6;
+            this.Cognome.Name = "Cognome";
+            this.Cognome.Width = 125;
+            // 
+            // DataNascita
+            // 
+            this.DataNascita.DataPropertyName = "DataNascita";
+            this.DataNascita.HeaderText = "Data";
+            this.DataNascita.MinimumWidth = 6;
+            this.DataNascita.Name = "DataNascita";
+            this.DataNascita.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 125;
+            // 
+            // btn_Visualizza
+            // 
+            this.btn_Visualizza.Location = new System.Drawing.Point(374, 267);
+            this.btn_Visualizza.Name = "btn_Visualizza";
+            this.btn_Visualizza.Size = new System.Drawing.Size(94, 29);
+            this.btn_Visualizza.TabIndex = 12;
+            this.btn_Visualizza.Text = "Visualizza";
+            this.btn_Visualizza.UseVisualStyleBackColor = true;
+            this.btn_Visualizza.Click += new System.EventHandler(this.btn_Visualizza_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.btn_Visualizza);
+            this.Controls.Add(this.dg_Persone);
             this.Controls.Add(this.btn_Elimina);
             this.Controls.Add(this.tx_DataNascita);
             this.Controls.Add(this.label4);
@@ -140,11 +207,12 @@ namespace WindowsFormApp
             this.Controls.Add(this.tx_Cognome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tx_Nome);
-            this.Controls.Add(this.bt_Salva);
+            this.Controls.Add(this.btn_Salva);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_Persone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +220,7 @@ namespace WindowsFormApp
 
         #endregion
 
-        private System.Windows.Forms.Button bt_Salva;
+        private System.Windows.Forms.Button btn_Salva;
         private System.Windows.Forms.TextBox tx_Nome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -162,6 +230,12 @@ namespace WindowsFormApp
         private System.Windows.Forms.TextBox tx_Email;
         private System.Windows.Forms.DateTimePicker tx_DataNascita;
         private System.Windows.Forms.Button btn_Elimina;
+        private System.Windows.Forms.DataGridView dg_Persone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cognome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.Button btn_Visualizza;
     }
 }
 

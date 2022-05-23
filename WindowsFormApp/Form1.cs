@@ -152,9 +152,9 @@ namespace WindowsFormApp
                 IQueryable<Persona> query = ctx.Persona;
 
                 if (!String.IsNullOrEmpty(tx_Cognome.Text))
-                    query = query.Where(q => q.Cognome == tx_Cognome.Text);
+                    query = query.Where(q => q.Cognome.Contains(tx_Cognome.Text));
                 if (!String.IsNullOrEmpty(tx_Nome.Text))
-                    query = query.Where(q => q.Nome == tx_Nome.Text);
+                    query = query.Where(q => q.Nome.Contains(tx_Nome.Text));
                 var lista = query.ToList();
                 dg_Persone.DataSource = lista.Select(q => new { q.Nome, q.Cognome, q.Email, Data = q.DataNascita}).ToList();
                 

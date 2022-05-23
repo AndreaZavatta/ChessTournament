@@ -40,11 +40,11 @@ namespace WindowsFormApp
             this.tx_DataNascita = new System.Windows.Forms.DateTimePicker();
             this.btn_Elimina = new System.Windows.Forms.Button();
             this.dg_Persone = new System.Windows.Forms.DataGridView();
+            this.btn_Visualizza = new System.Windows.Forms.Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cognome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataNascita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Visualizza = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_Persone)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,6 +149,16 @@ namespace WindowsFormApp
             this.dg_Persone.Size = new System.Drawing.Size(503, 188);
             this.dg_Persone.TabIndex = 11;
             // 
+            // btn_Visualizza
+            // 
+            this.btn_Visualizza.Location = new System.Drawing.Point(374, 267);
+            this.btn_Visualizza.Name = "btn_Visualizza";
+            this.btn_Visualizza.Size = new System.Drawing.Size(94, 29);
+            this.btn_Visualizza.TabIndex = 12;
+            this.btn_Visualizza.Text = "Visualizza";
+            this.btn_Visualizza.UseVisualStyleBackColor = true;
+            this.btn_Visualizza.Click += new System.EventHandler(this.btn_Visualizza_Click);
+            // 
             // Nome
             // 
             this.Nome.DataPropertyName = "Nome";
@@ -167,7 +177,7 @@ namespace WindowsFormApp
             // 
             // DataNascita
             // 
-            this.DataNascita.DataPropertyName = "DataNascita";
+            this.DataNascita.DataPropertyName = "Data";
             this.DataNascita.HeaderText = "Data";
             this.DataNascita.MinimumWidth = 6;
             this.DataNascita.Name = "DataNascita";
@@ -180,16 +190,6 @@ namespace WindowsFormApp
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.Width = 125;
-            // 
-            // btn_Visualizza
-            // 
-            this.btn_Visualizza.Location = new System.Drawing.Point(374, 267);
-            this.btn_Visualizza.Name = "btn_Visualizza";
-            this.btn_Visualizza.Size = new System.Drawing.Size(94, 29);
-            this.btn_Visualizza.TabIndex = 12;
-            this.btn_Visualizza.Text = "Visualizza";
-            this.btn_Visualizza.UseVisualStyleBackColor = true;
-            this.btn_Visualizza.Click += new System.EventHandler(this.btn_Visualizza_Click);
             // 
             // Form1
             // 
@@ -231,11 +231,11 @@ namespace WindowsFormApp
         private System.Windows.Forms.DateTimePicker tx_DataNascita;
         private System.Windows.Forms.Button btn_Elimina;
         private System.Windows.Forms.DataGridView dg_Persone;
+        private System.Windows.Forms.Button btn_Visualizza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cognome;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataNascita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.Button btn_Visualizza;
     }
 }
 

@@ -156,9 +156,36 @@ namespace WindowsFormApp
                 if (!String.IsNullOrEmpty(tx_Nome.Text))
                     query = query.Where(q => q.Nome.Contains(tx_Nome.Text));
                 var lista = query.ToList();
-                dg_Persone.DataSource = lista.Select(q => new { q.Nome, q.Cognome, q.Email, Data = q.DataNascita}).ToList();
-                
+                dg_Persone.DataSource = lista;
+                //dg_Persone.DataSource = lista.Select(q => new { q.Nome, q.Cognome, q.Email, Data = q.DataNascita}).ToList();
+
             }
          }
+
+        private void dg_Persone_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (MyDbContext ctx = new MyDbContext(connectionString))
+            {
+                if (dg_Persone.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    var result = MessageBox.Show("Confermi la cancellazione?", "Chess", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        int id = (int)dg_Persone.Rows[e.RowIndex].Cells["IdPersona"].Value;
+
+                        Persona persona = ctx.Persona.Find(id);
+
+                        if (persona != null)
+                        {
+                            ctx.Persona.Remove(persona);
+                            ctx.SaveChanges();
+                            btn_Visualizza_Click(null, null);
+                        }
+    
+                    }
+                }
+            }
+
+        }
     }
 }

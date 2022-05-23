@@ -41,10 +41,12 @@ namespace WindowsFormApp
             this.btn_Elimina = new System.Windows.Forms.Button();
             this.dg_Persone = new System.Windows.Forms.DataGridView();
             this.btn_Visualizza = new System.Windows.Forms.Button();
+            this.IdPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cognome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataNascita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_Persone)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,17 +139,20 @@ namespace WindowsFormApp
             // 
             this.dg_Persone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_Persone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdPersona,
             this.Nome,
             this.Cognome,
             this.DataNascita,
-            this.Email});
-            this.dg_Persone.Location = new System.Drawing.Point(374, 57);
+            this.Email,
+            this.Delete});
+            this.dg_Persone.Location = new System.Drawing.Point(347, 57);
             this.dg_Persone.Name = "dg_Persone";
             this.dg_Persone.RowHeadersVisible = false;
             this.dg_Persone.RowHeadersWidth = 51;
             this.dg_Persone.RowTemplate.Height = 29;
-            this.dg_Persone.Size = new System.Drawing.Size(503, 188);
+            this.dg_Persone.Size = new System.Drawing.Size(564, 188);
             this.dg_Persone.TabIndex = 11;
+            this.dg_Persone.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_Persone_CellContentClick);
             // 
             // btn_Visualizza
             // 
@@ -158,6 +163,15 @@ namespace WindowsFormApp
             this.btn_Visualizza.Text = "Visualizza";
             this.btn_Visualizza.UseVisualStyleBackColor = true;
             this.btn_Visualizza.Click += new System.EventHandler(this.btn_Visualizza_Click);
+            // 
+            // IdPersona
+            // 
+            this.IdPersona.DataPropertyName = "IdPersona";
+            this.IdPersona.HeaderText = "Id";
+            this.IdPersona.MinimumWidth = 6;
+            this.IdPersona.Name = "IdPersona";
+            this.IdPersona.Visible = false;
+            this.IdPersona.Width = 125;
             // 
             // Nome
             // 
@@ -177,7 +191,7 @@ namespace WindowsFormApp
             // 
             // DataNascita
             // 
-            this.DataNascita.DataPropertyName = "Data";
+            this.DataNascita.DataPropertyName = "DataNascita";
             this.DataNascita.HeaderText = "Data";
             this.DataNascita.MinimumWidth = 6;
             this.DataNascita.Name = "DataNascita";
@@ -190,6 +204,13 @@ namespace WindowsFormApp
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.Width = 125;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 30;
             // 
             // Form1
             // 
@@ -232,10 +253,12 @@ namespace WindowsFormApp
         private System.Windows.Forms.Button btn_Elimina;
         private System.Windows.Forms.DataGridView dg_Persone;
         private System.Windows.Forms.Button btn_Visualizza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPersona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cognome;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataNascita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
 

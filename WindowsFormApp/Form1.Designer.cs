@@ -38,11 +38,12 @@ namespace WindowsFormApp
             this.label4 = new System.Windows.Forms.Label();
             this.tx_Email = new System.Windows.Forms.TextBox();
             this.tx_DataNascita = new System.Windows.Forms.DateTimePicker();
+            this.btn_Elimina = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Salva
             // 
-            this.bt_Salva.Location = new System.Drawing.Point(273, 268);
+            this.bt_Salva.Location = new System.Drawing.Point(58, 222);
             this.bt_Salva.Name = "bt_Salva";
             this.bt_Salva.Size = new System.Drawing.Size(94, 29);
             this.bt_Salva.TabIndex = 0;
@@ -52,7 +53,7 @@ namespace WindowsFormApp
             // 
             // tx_Nome
             // 
-            this.tx_Nome.Location = new System.Drawing.Point(353, 103);
+            this.tx_Nome.Location = new System.Drawing.Point(138, 57);
             this.tx_Nome.Name = "tx_Nome";
             this.tx_Nome.Size = new System.Drawing.Size(125, 27);
             this.tx_Nome.TabIndex = 1;
@@ -60,7 +61,7 @@ namespace WindowsFormApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(273, 106);
+            this.label1.Location = new System.Drawing.Point(58, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 2;
@@ -69,7 +70,7 @@ namespace WindowsFormApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 139);
+            this.label2.Location = new System.Drawing.Point(58, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 4;
@@ -77,7 +78,7 @@ namespace WindowsFormApp
             // 
             // tx_Cognome
             // 
-            this.tx_Cognome.Location = new System.Drawing.Point(353, 136);
+            this.tx_Cognome.Location = new System.Drawing.Point(138, 90);
             this.tx_Cognome.Name = "tx_Cognome";
             this.tx_Cognome.Size = new System.Drawing.Size(125, 27);
             this.tx_Cognome.TabIndex = 3;
@@ -85,7 +86,7 @@ namespace WindowsFormApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(273, 172);
+            this.label3.Location = new System.Drawing.Point(58, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 20);
             this.label3.TabIndex = 6;
@@ -94,7 +95,7 @@ namespace WindowsFormApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(273, 205);
+            this.label4.Location = new System.Drawing.Point(58, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 8;
@@ -102,7 +103,7 @@ namespace WindowsFormApp
             // 
             // tx_Email
             // 
-            this.tx_Email.Location = new System.Drawing.Point(353, 202);
+            this.tx_Email.Location = new System.Drawing.Point(138, 156);
             this.tx_Email.Name = "tx_Email";
             this.tx_Email.Size = new System.Drawing.Size(125, 27);
             this.tx_Email.TabIndex = 7;
@@ -110,16 +111,27 @@ namespace WindowsFormApp
             // tx_DataNascita
             // 
             this.tx_DataNascita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.tx_DataNascita.Location = new System.Drawing.Point(353, 169);
+            this.tx_DataNascita.Location = new System.Drawing.Point(138, 123);
             this.tx_DataNascita.Name = "tx_DataNascita";
             this.tx_DataNascita.Size = new System.Drawing.Size(125, 27);
             this.tx_DataNascita.TabIndex = 9;
+            // 
+            // btn_Elimina
+            // 
+            this.btn_Elimina.Location = new System.Drawing.Point(201, 222);
+            this.btn_Elimina.Name = "btn_Elimina";
+            this.btn_Elimina.Size = new System.Drawing.Size(94, 29);
+            this.btn_Elimina.TabIndex = 10;
+            this.btn_Elimina.Text = "Elimina";
+            this.btn_Elimina.UseVisualStyleBackColor = true;
+            this.btn_Elimina.Click += new System.EventHandler(this.btn_Elimina_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.btn_Elimina);
             this.Controls.Add(this.tx_DataNascita);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tx_Email);
@@ -149,6 +161,7 @@ namespace WindowsFormApp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tx_Email;
         private System.Windows.Forms.DateTimePicker tx_DataNascita;
+        private System.Windows.Forms.Button btn_Elimina;
     }
 }
 

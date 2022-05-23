@@ -123,5 +123,21 @@ namespace WindowsFormApp
             }
         }
 
+        private void btn_Elimina_Click(object sender, EventArgs e)
+        {
+            using (MyDbContext ctx = new MyDbContext(connectionString))
+            {
+                Persona persona = ctx.Persona.Where(q => q.Nome == tx_Nome.Text && q.Cognome == tx_Cognome.Text).FirstOrDefault();
+                if (persona != null)
+                {
+                    ctx.Persona.Remove(persona);
+                    ctx.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Persona non trovata!");
+                }
+            }
+        }
     }
 }

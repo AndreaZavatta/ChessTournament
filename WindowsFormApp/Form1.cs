@@ -149,8 +149,7 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(connectionString))
             {
-                Giocatore giocatore = ctx.Giocatori.FirstOrDefault();
-                Persona persona = ctx.Persone.FirstOrDefault();
+                Giocatore giocatore = ctx.Giocatori.Include(q =>q.Persona).FirstOrDefault();
                 string nome = giocatore?.Persona.Nome;
 
 

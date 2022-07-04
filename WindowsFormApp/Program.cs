@@ -22,7 +22,7 @@ namespace WindowsFormApp
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)

@@ -12,7 +12,10 @@ namespace Context.Data
 
     public class MyDbContext : DbContext
     {
-        public DbSet<Persona> Persona { get; set; }
+        public DbSet<Persona> Persone { get; set; }
+        public DbSet<Giocatore> Giocatori { get; set; }
+        public DbSet<Allenatore> Allenatori { get; set; }
+        public DbSet<Allenamento> Allenamenti { get; set; }
 
         protected string ConnectionString { get; }
 

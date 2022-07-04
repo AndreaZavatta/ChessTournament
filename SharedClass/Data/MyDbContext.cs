@@ -12,10 +12,24 @@ namespace Context.Data
 
     public class MyDbContext : DbContext
     {
-        public DbSet<Persona> Persone { get; set; }
-        public DbSet<Giocatore> Giocatori { get; set; }
-        public DbSet<Allenatore> Allenatori { get; set; }
         public DbSet<Allenamento> Allenamenti { get; set; }
+        public DbSet<Allenatore> Allenatori { get; set; }
+        public DbSet<Commento> Commenti { get; set; }
+        public DbSet<Competizione> Competizioni { get; set; }
+        public DbSet<Edizione> Edizioni { get; set; }
+        public DbSet<Giocatore> Giocatori { get; set; }
+        public DbSet<Iscritto> Iscritti { get; set; }
+        public DbSet<Lezione> Lezioni { get; set; }
+        public DbSet<Luogo> Luoghi { get; set; }
+
+        public DbSet<Mossa> Mosse { get; set; }
+        public DbSet<Organizzatore> Organizzatori { get; set; }
+        public DbSet<Partita> Partite { get; set; }
+        public DbSet<Persona> Persone { get; set; }
+        public DbSet<Torneo> Tornei { get; set; }
+
+
+
 
         protected string ConnectionString { get; }
 

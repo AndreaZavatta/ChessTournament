@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Context.Data
 {
-    class Mossa
+    public class Mossa
     {
         public int CodicePartita { get; set; }
         public int PosPartenzaX { get; set; }

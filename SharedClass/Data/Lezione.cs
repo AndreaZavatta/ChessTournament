@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Context.Data
 {
-    class Lezione
+    public class Lezione
     {
         [Key]
         public int CodiceAllenatore { get; set; }

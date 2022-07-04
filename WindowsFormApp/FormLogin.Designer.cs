@@ -1,8 +1,11 @@
 ﻿
+using System.Windows.Forms;
+
 namespace WindowsFormApp
 {
-    partial class FormLogin
+    partial class FormLogin:Form
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>

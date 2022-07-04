@@ -1,7 +1,9 @@
 ﻿
+using System;
+
 namespace WindowsFormApp
 {
-    partial class lblName
+    partial class FormRegistrazione
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +33,11 @@ namespace WindowsFormApp
         {
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCognome = new System.Windows.Forms.TextBox();
             this.lblCognome = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.cmbTipologia = new System.Windows.Forms.ComboBox();
             this.cmbGenere = new System.Windows.Forms.ComboBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
@@ -69,13 +71,13 @@ namespace WindowsFormApp
             this.txtNome.Size = new System.Drawing.Size(312, 27);
             this.txtNome.TabIndex = 1;
             // 
-            // textBox2
+            // txtCognome
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Cognome";
-            this.textBox2.Size = new System.Drawing.Size(312, 27);
-            this.textBox2.TabIndex = 3;
+            this.txtCognome.Location = new System.Drawing.Point(125, 147);
+            this.txtCognome.Name = "txtCognome";
+            this.txtCognome.PlaceholderText = "Cognome";
+            this.txtCognome.Size = new System.Drawing.Size(312, 27);
+            this.txtCognome.TabIndex = 3;
             // 
             // lblCognome
             // 
@@ -103,19 +105,19 @@ namespace WindowsFormApp
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             // 
-            // cmbType
+            // cmbTipologia
             // 
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
+            this.cmbTipologia.FormattingEnabled = true;
+            this.cmbTipologia.Items.AddRange(new object[] {
             "Organizzatore",
             "Giocatore",
             "Allenatore"});
-            this.cmbType.Location = new System.Drawing.Point(125, 65);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(312, 28);
-            this.cmbType.TabIndex = 6;
-            this.cmbType.Text = "Tipologia";
-            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
+            this.cmbTipologia.Location = new System.Drawing.Point(125, 65);
+            this.cmbTipologia.Name = "cmbTipologia";
+            this.cmbTipologia.Size = new System.Drawing.Size(312, 28);
+            this.cmbTipologia.TabIndex = 6;
+            this.cmbTipologia.Text = "Tipologia";
+            this.cmbTipologia.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
             // 
             // cmbGenere
             // 
@@ -249,7 +251,7 @@ namespace WindowsFormApp
             this.lblFederazione.Text = "Federazione";
             this.lblFederazione.Visible = false;
             // 
-            // lblName
+            // FormRegistrazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,30 +270,30 @@ namespace WindowsFormApp
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.cmbGenere);
-            this.Controls.Add(this.cmbType);
+            this.Controls.Add(this.cmbTipologia);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCognome);
             this.Controls.Add(this.lblCognome);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Name = "lblName";
+            this.Name = "FormRegistrazione";
             this.Text = "Registrazione";
-            this.Load += new System.EventHandler(this.lblName_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+
         #endregion
 
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCognome;
         private System.Windows.Forms.Label lblCognome;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.ComboBox cmbTipologia;
         private System.Windows.Forms.ComboBox cmbGenere;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;

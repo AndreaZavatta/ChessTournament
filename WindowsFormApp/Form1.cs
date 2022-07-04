@@ -14,13 +14,9 @@ namespace WindowsFormApp
 {
     public partial class Form1 : Form
     {
-        private static string connectionString;
+        private static string connectionString = "";
 
-        public Form1()
-        {
-            connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
-            InitializeComponent();
-        }
+        public Form1():base() { }
 
         private void Form1_Load(object sender, EventArgs e)
         {

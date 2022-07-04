@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Context.Data
 {
+    [Table("Iscritto")]
     public class Iscritto
     {
         [Key] 

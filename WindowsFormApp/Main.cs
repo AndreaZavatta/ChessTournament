@@ -18,8 +18,8 @@ namespace WindowsFormApp
 
         private void btnRegistrazione_Click(object sender, EventArgs e)
         {
-            lblName form = new lblName();
-            form.Show();
+            FormRegistrazione form = new FormRegistrazione();
+            form.ShowDialog();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

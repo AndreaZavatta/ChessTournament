@@ -8,11 +8,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormApp
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin
     {
-        public FormLogin()
-        {
-            InitializeComponent();
-        }
+
+
     }
 }

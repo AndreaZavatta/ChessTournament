@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Context.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -9,27 +11,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormApp
 {
-    public partial class lblName : Form
+    public partial class FormRegistrazione : Form
     {
-        public lblName()
+        private static string _connectionString;
+        public FormRegistrazione()
         {
+            _connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             InitializeComponent();
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-
-        private void lblName_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cmbType.Text)
+            switch (cmbTipologia.Text)
             {
                 case "Allenatore":
                     lblRating.Visible = false;
@@ -52,13 +46,158 @@ namespace WindowsFormApp
             }
         }
 
+        private void SavePlayer()
+        {
+            using (MyDbContext ctx = new MyDbContext(_connectionString))
+            {
+                Persona person = GetNewPerson();
+                ctx.Persone.Add(person);
+                Giocatore player = new Giocatore()
+                {
+                    Persona = person,
+                    Federazione = txtFederazione.Text,
+                    Rating = Convert.ToInt32(txtRating.Text)
+                };
+                ctx.Add(player);
+                ctx.SaveChanges();
+            }
+        }
+        private void SaveOrganizer()
+        {
+            using (MyDbContext ctx = new MyDbContext(_connectionString))
+            {
+                Persona person = GetNewPerson();
+                ctx.Persone.Add(person);
+                Organizzatore organizer = new Organizzatore()
+                {
+                    Persona = person
+                };
+                ctx.Add(organizer);
+                ctx.SaveChanges();
+            }
+        }
+
+        private void SaveCoach()
+        {
+            using (MyDbContext ctx = new MyDbContext(_connectionString))
+            {
+                Persona person = GetNewPerson();
+                ctx.Persone.Add(person);
+                Allenatore coach = new Allenatore
+                {
+                    Persona = person,
+                    Federazione = txtFederazione.Text,
+                };
+                ctx.Allenatori.Add(coach);
+                ctx.SaveChanges();
+            }
+        }
+
+        private Persona GetNewPerson()
+        {
+            return new Persona
+            {
+                Nome = txtNome.Text,
+                Cognome = txtCognome.Text,
+                Email = txtEmail.Text,
+                DataNascita = dateTimePicker1.Value,
+                Genere = cmbGenere.Text.Equals("Maschio") ? 0 : 1,
+                Password = txtPassword.Text,
+                Telefono = txtTelefono.Text
+            };
+               
+        }
+
+        private void SaveUser()
+        {
+            try
+            {
+                if (cmbTipologia.Text.Equals("Giocatore"))
+                {
+                    SavePlayer();
+                }
+                else if (cmbTipologia.Text.Equals("Organizzatore"))
+                {
+                    SaveOrganizer();
+                }
+                else
+                {
+                    SaveCoach();
+                }
+
+                MessageBox.Show("Registrazione completata con successo");
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Errore nel salvataggio dell'utente");
+            }
+        }
+
+        private bool CheckExtistingUser(string email)
+        {
+            using (MyDbContext ctx = new MyDbContext(_connectionString))
+            {
+                return ctx.Persone.FirstOrDefault(q => q.Email.Equals(email)) != null;
+            }
+        }
+
         private void btnSalva_Click(object sender, EventArgs e)
+        {
+            var error = GetErrorMessage();
+            if (!String.IsNullOrEmpty(error))
+            {
+                MessageBox.Show(error, "Attenzione!");
+            }
+            else
+            {
+                if (!CheckExtistingUser(txtEmail.Text))
+                {
+                    SaveUser();
+                }
+                else
+                {
+                    MessageBox.Show("utente già esistente");
+                }
+
+            }
+        }
+
+
+        private String GetErrorMessage()
         {
             StringBuilder err = new StringBuilder();
             if (String.IsNullOrEmpty(txtNome.Text))
             {
                 err.Append($"inserire un nome{Environment.NewLine}");
             }
+
+            if (String.IsNullOrEmpty(txtCognome.Text))
+            {
+                err.Append($"inserire un cognome{Environment.NewLine}");
+            }
+
+            if (String.IsNullOrEmpty(txtEmail.Text))
+            {
+                err.Append($"inserire un email{Environment.NewLine}");
+            }
+
+            if (String.IsNullOrEmpty(txtPassword.Text))
+            {
+                err.Append($"inserire una password{Environment.NewLine}");
+            }
+
+            if (cmbGenere.Text.Equals("Genere"))
+            {
+                err.Append($"inserire un genere{Environment.NewLine}");
+            }
+
+            if (cmbTipologia.Text.Equals("Tipologia"))
+            {
+                err.Append($"inserire una tipologia{Environment.NewLine}");
+            }
+
+            return err.ToString();
         }
     }
 }

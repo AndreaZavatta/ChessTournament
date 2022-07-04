@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Context.Data
 {
+    [Table("Mossa")]
     public class Mossa
     {
         public int CodicePartita { get; set; }

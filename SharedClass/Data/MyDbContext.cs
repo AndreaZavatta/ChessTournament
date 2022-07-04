@@ -21,7 +21,6 @@ namespace Context.Data
         public DbSet<Iscritto> Iscritti { get; set; }
         public DbSet<Lezione> Lezioni { get; set; }
         public DbSet<Luogo> Luoghi { get; set; }
-
         public DbSet<Mossa> Mosse { get; set; }
         public DbSet<Organizzatore> Organizzatori { get; set; }
         public DbSet<Partita> Partite { get; set; }
@@ -46,6 +45,10 @@ namespace Context.Data
                 optionsBuilder.UseMySQL(ConnectionString);
             //optionsBuilder.UseLazyLoadingProxies();
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Competizione>().HasNoKey();
+            modelBuilder.Entity<Mossa>().HasNoKey();
+        }
     }
 }

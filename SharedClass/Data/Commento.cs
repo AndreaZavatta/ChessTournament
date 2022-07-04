@@ -14,8 +14,8 @@ namespace Context.Data
         public int Codice { get; set; }
         public int IsVisibile { get; set; }
         public string Testo { get; set; }
-        public string CodicePersona { get; set; }
-        public string CodicePartita { get; set; }
+        public int CodicePersona { get; set; }
+        public int CodicePartita { get; set; }
 
         [ForeignKey("CodicePersona")] 
         public virtual Persona Persona { get; set; }

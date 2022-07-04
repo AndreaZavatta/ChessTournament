@@ -11,11 +11,14 @@ namespace Context.Data
     public class Persona
     {
         [Key]
-        public int IdPersona { get; set; }
+        public int Codice { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
-        public DateTime? DataNascita { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
+        public int? Genere { get; set; }
+        public DateTime? DataNascita { get; set; }
+        public string Telefono { get; set; }
 
         //[Display(Name = "Localita")]
         //public int IdLocalita { get; set; }

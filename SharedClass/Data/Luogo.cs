@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Context.Data
 {
-    class Luogo
+    public class Luogo
     {
         [Key]
         public int Codice { get; set; }

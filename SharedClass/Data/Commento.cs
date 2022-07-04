@@ -19,6 +19,8 @@ namespace Context.Data
 
         [ForeignKey("CodicePersona")] 
         public virtual Persona Persona { get; set; }
+        [ForeignKey("CodicePartita")]
+        public virtual Partita Partita { get; set; }
 
 
 

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Context.Data
 {
-    class Edizione
+    public class Edizione
     {
         [Key]
         public int Codice { get; set; }
@@ -18,6 +20,15 @@ namespace Context.Data
         public int? CodiceVincitore { get; set; }
         public int? CodiceOrganizzatore { get; set; }
         public int? CodiceLuogo { get; set; }
+
+        [ForeignKey("CodiceTorneo")]
+        public virtual Torneo Torneo { get; set; }
+        [ForeignKey("CodiceVincitore")]
+        public virtual Giocatore Giocatore { get; set; }
+        [ForeignKey("CodiceOrganizzatore")]
+        public virtual Organizzatore Organizzatore { get; set; }
+        [ForeignKey("CodiceLuogo")]
+        public virtual Luogo Luogo { get; set; }
 
     }
 }

@@ -1,7 +1,8 @@
 ﻿    using System;
 using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace Context.Data
 {
@@ -11,6 +12,9 @@ namespace Context.Data
         public int CodiceAllenatore { get; set; }
         public int CodiceGiocatore { get; set; }
         public DateTime? Data { get; set; }
-        public string? Argomento { get; set; }
+        public String Argomento { get; set; }
+
+        [ForeignKey("CodiceGiocatore")]
+        public virtual Giocatore Giocatore { get; set; }
     }
 }

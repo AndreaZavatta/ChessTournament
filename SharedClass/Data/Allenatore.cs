@@ -14,6 +14,8 @@ namespace Context.Data
         public int Codice { get; set; }
         public string Federazione { get; set; }
         public int CodicePersona { get; set; }
+        [ForeignKey("CodicePersona")]
+        public virtual Persona Persona { get; set; }
 
     }
 }

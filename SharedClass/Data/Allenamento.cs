@@ -18,6 +18,9 @@ namespace Context.Data
         [ForeignKey("CodiceAllenatore")]
         public virtual Allenatore Allenatore { get; set; }
 
+        [ForeignKey("CodiceGiocatore")]
+        public virtual Giocatore Giocatore { get; set; }
+
 
     }
 }

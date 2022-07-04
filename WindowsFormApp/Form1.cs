@@ -112,11 +112,11 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(connectionString))
             {
-                Persona persona = ctx.Persona.Where(q => q.Nome == tx_Nome.Text && q.Cognome == tx_Cognome.Text).FirstOrDefault();
+                Persona persona = ctx.Persone.Where(q => q.Nome == tx_Nome.Text && q.Cognome == tx_Cognome.Text).FirstOrDefault();
                 if (persona == null)
                 {
                     persona = new Persona();
-                    ctx.Persona.Add(persona);
+                    ctx.Persone.Add(persona);
                     persona.Nome = tx_Nome.Text;
                     persona.Cognome = tx_Cognome.Text;
                 }
@@ -132,10 +132,10 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(connectionString))
             {
-                Persona persona = ctx.Persona.Where(q => q.Nome == tx_Nome.Text && q.Cognome == tx_Cognome.Text).FirstOrDefault();
+                Persona persona = ctx.Persone.Where(q => q.Nome == tx_Nome.Text && q.Cognome == tx_Cognome.Text).FirstOrDefault();
                 if (persona != null)
                 {
-                    ctx.Persona.Remove(persona);
+                    ctx.Persone.Remove(persona);
                     ctx.SaveChanges();
                 }
                 else
@@ -149,7 +149,14 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(connectionString))
             {
-                IQueryable<Persona> query = ctx.Persona;
+                Giocatore giocatore = ctx.Giocatori.FirstOrDefault();
+                Persona persona = ctx.Persone.FirstOrDefault();
+                string nome = giocatore?.Persona.Nome;
+
+
+
+
+                IQueryable<Persona> query = ctx.Persone;
 
                 if (!String.IsNullOrEmpty(tx_Cognome.Text))
                     query = query.Where(q => q.Cognome.Contains(tx_Cognome.Text));
@@ -173,11 +180,11 @@ namespace WindowsFormApp
                     {
                         int id = (int)dg_Persone.Rows[e.RowIndex].Cells["IdPersona"].Value;
 
-                        Persona persona = ctx.Persona.Find(id);
+                        Persona persona = ctx.Persone.Find(id);
 
                         if (persona != null)
                         {
-                            ctx.Persona.Remove(persona);
+                            ctx.Persone.Remove(persona);
                             ctx.SaveChanges();
                             btn_Visualizza_Click(null, null);
                         }

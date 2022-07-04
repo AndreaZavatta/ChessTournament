@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Context.Data
@@ -14,5 +15,9 @@ namespace Context.Data
         public int? CodicePersona { get; set; }
         public int? CodicePartita { get; set; }
 
+        [ForeignKey("CodicePersona")]
+        public virtual Persona Persona { get; set; }
+        [ForeignKey("CodiceEdizione")]
+        public virtual Edizione Edizione { get; set; }
     }
 }

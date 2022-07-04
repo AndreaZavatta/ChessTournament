@@ -20,11 +20,5 @@ namespace Context.Data
         public DateTime? DataNascita { get; set; }
         public string Telefono { get; set; }
 
-        //[Display(Name = "Localita")]
-        //public int IdLocalita { get; set; }
-
-        //[ForeignKey("IdLocalita")]
-        //public virtual Localita Localita { get; set; }
-
     }
 }

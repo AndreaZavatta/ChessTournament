@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Context.Data
 {
-    class Partita
+    public class Partita
     {
         [Key]
         public int Codice { get; set; }

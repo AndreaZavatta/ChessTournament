@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormApp
 {
-    public partial class Chess : Form
+    public partial class FormAllenatore : Form
     {
-        public Chess()
+        public FormAllenatore()
         {
             InitializeComponent();
         }

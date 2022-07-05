@@ -18,7 +18,7 @@ namespace WindowsFormApp
 
     public partial class FormLogin
     {
-        private string _connectionString;
+        private readonly string _connectionString;
         public FormLogin()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
@@ -34,19 +34,39 @@ namespace WindowsFormApp
             else
             {
                 Persona persona = GetUser(txtEmail.Text, txtPassword.Text);
-                if ( persona == null)
+                if ( persona is null)
                 {
                     MessageBox.Show("Credenziali non valide");
                 }
                 else
                 {
-                    this.Hide();
-                    Chess chess = new Chess();
                     saveLoggedUser(persona);
-                    chess.ShowDialog();
-                    this.Close();
+                    SwitchPage(persona);
                 }
             }
+        }
+
+        private Form GetPageFromUserType(Persona person)
+        {
+            if (person.Tipo.Equals(Persona.TipoUtente.Organizzatore))
+            {
+                return new FormOrganizzatore();
+            }
+            else if (person.Tipo.Equals(Persona.TipoUtente.Allenatore))
+            {
+                return new FormAllenatore();
+            }
+            else
+            {
+                return new FormGiocatore();
+            }
+        }
+
+        private void SwitchPage(Persona persona)
+        {
+            this.Hide();
+            GetPageFromUserType(persona).ShowDialog();
+            this.Close();
         }
 
         private void saveLoggedUser(Persona persona)
@@ -61,8 +81,8 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(_connectionString))
             {
-                string sha256pwd = Converter.ComputeSha256Hash(password);
-                return ctx.Persone.FirstOrDefault(q => q.Email.Equals(email) && q.Password.Equals(sha256pwd));
+                string sha256Pwd = Converter.ComputeSha256Hash(password);
+                return ctx.Persone.FirstOrDefault(q => q.Email.Equals(email) && q.Password.Equals(sha256Pwd));
             }
         }
 

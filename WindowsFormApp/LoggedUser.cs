@@ -5,7 +5,7 @@ using Context.Data;
 
 namespace WindowsFormApp
 {
-    public class LoggedUser
+    public static class LoggedUser
     {
 
         public static string Email { get; set;}

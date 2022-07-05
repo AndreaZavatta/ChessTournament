@@ -14,5 +14,19 @@ namespace WindowsFormApp
         {
             InitializeComponent();
         }
+
+        private void btnCreaTorneo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormCreaTorneo().ShowDialog();
+            this.Close();
+        }
+
+        private void btnVisualizzaTorneo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormVisualizzaTornei().ShowDialog();
+            this.Close();
+        }
     }
 }

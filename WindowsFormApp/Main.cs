@@ -25,7 +25,7 @@ namespace WindowsFormApp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             FormLogin form = new FormLogin();
-            form.Show();
+            form.ShowDialog();
         }
     }
 }

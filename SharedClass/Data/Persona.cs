@@ -19,6 +19,16 @@ namespace Context.Data
         public int? Genere { get; set; }
         public DateTime? DataNascita { get; set; }
         public string Telefono { get; set; }
-
+        public TipoUtente Tipo { get; set; }
+        public enum TipoUtente
+        {
+            Giocatore = 0,
+            Organizzatore = 1,
+            Allenatore = 2
+        }
     }
+
+
+
+
 }

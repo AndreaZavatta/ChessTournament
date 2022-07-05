@@ -50,13 +50,13 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(_connectionString))
             {
-                Persona person = GetNewPerson();
+                Persona person = GetNewPerson(Persona.TipoUtente.Giocatore);
                 ctx.Persone.Add(person);
                 Giocatore player = new Giocatore()
                 {
                     Persona = person,
                     Federazione = txtFederazione.Text,
-                    Rating = Convert.ToInt32(txtRating.Text)
+                    Rating = Convert.ToInt32(txtRating.Text),
                 };
                 ctx.Add(player);
                 ctx.SaveChanges();
@@ -66,7 +66,7 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(_connectionString))
             {
-                Persona person = GetNewPerson();
+                Persona person = GetNewPerson(Persona.TipoUtente.Organizzatore);
                 ctx.Persone.Add(person);
                 Organizzatore organizer = new Organizzatore()
                 {
@@ -81,7 +81,7 @@ namespace WindowsFormApp
         {
             using (MyDbContext ctx = new MyDbContext(_connectionString))
             {
-                Persona person = GetNewPerson();
+                Persona person = GetNewPerson(Persona.TipoUtente.Allenatore);
                 ctx.Persone.Add(person);
                 Allenatore coach = new Allenatore
                 {
@@ -93,7 +93,7 @@ namespace WindowsFormApp
             }
         }
 
-        private Persona GetNewPerson()
+        private Persona GetNewPerson(Persona.TipoUtente tipo)
         {
             return new Persona
             {
@@ -102,10 +102,10 @@ namespace WindowsFormApp
                 Email = txtEmail.Text,
                 DataNascita = dateTimePicker1.Value,
                 Genere = cmbGenere.Text.Equals("Maschio") ? 0 : 1,
-                Password = txtPassword.Text,
-                Telefono = txtTelefono.Text
+                Password = Converter.ComputeSha256Hash(txtPassword.Text),
+                Telefono = txtTelefono.Text,
+                Tipo = tipo
             };
-               
         }
 
         private void SaveUser()
@@ -157,7 +157,7 @@ namespace WindowsFormApp
                 }
                 else
                 {
-                    MessageBox.Show("utente già esistente");
+                    MessageBox.Show("Utente già esistente");
                 }
 
             }
@@ -169,32 +169,32 @@ namespace WindowsFormApp
             StringBuilder err = new StringBuilder();
             if (String.IsNullOrEmpty(txtNome.Text))
             {
-                err.Append($"inserire un nome{Environment.NewLine}");
+                err.Append($"Inserire un nome{Environment.NewLine}");
             }
 
             if (String.IsNullOrEmpty(txtCognome.Text))
             {
-                err.Append($"inserire un cognome{Environment.NewLine}");
+                err.Append($"Inserire un cognome{Environment.NewLine}");
             }
 
             if (String.IsNullOrEmpty(txtEmail.Text))
             {
-                err.Append($"inserire un email{Environment.NewLine}");
+                err.Append($"Inserire un email{Environment.NewLine}");
             }
 
             if (String.IsNullOrEmpty(txtPassword.Text))
             {
-                err.Append($"inserire una password{Environment.NewLine}");
+                err.Append($"Inserire una password{Environment.NewLine}");
             }
 
             if (cmbGenere.Text.Equals("Genere"))
             {
-                err.Append($"inserire un genere{Environment.NewLine}");
+                err.Append($"Inserire un genere{Environment.NewLine}");
             }
 
             if (cmbTipologia.Text.Equals("Tipologia"))
             {
-                err.Append($"inserire una tipologia{Environment.NewLine}");
+                err.Append($"Inserire una tipologia{Environment.NewLine}");
             }
 
             return err.ToString();

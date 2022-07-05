@@ -1,7 +1,10 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace WindowsFormApp
 {
-    partial class Main
+    partial class FormMain : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -65,6 +68,10 @@ namespace WindowsFormApp
             this.ResumeLayout(false);
 
         }
+
+
+
+
 
         #endregion
 

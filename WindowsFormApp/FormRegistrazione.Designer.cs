@@ -31,6 +31,7 @@ namespace WindowsFormApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtCognome = new System.Windows.Forms.TextBox();
@@ -52,6 +53,8 @@ namespace WindowsFormApp
             this.lblRating = new System.Windows.Forms.Label();
             this.txtFederazione = new System.Windows.Forms.TextBox();
             this.lblFederazione = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -251,11 +254,27 @@ namespace WindowsFormApp
             this.lblFederazione.Text = "Federazione";
             this.lblFederazione.Visible = false;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(13, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 29);
+            this.btnBack.TabIndex = 22;
+            this.btnBack.Text = "<--";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FormRegistrazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 601);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtRating);
             this.Controls.Add(this.lblRating);
             this.Controls.Add(this.txtFederazione);
@@ -308,5 +327,7 @@ namespace WindowsFormApp
         private System.Windows.Forms.Label lblRating;
         private System.Windows.Forms.TextBox txtFederazione;
         private System.Windows.Forms.Label lblFederazione;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -8,27 +8,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormApp
 {
-    public partial class Main : Form
+    public partial class FormMain : Form
     {
-        public Main()
+        public FormMain()
         {
             InitializeComponent();
         }
 
-
         private void btnRegistrazione_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormRegistrazione form = new FormRegistrazione();
-            form.ShowDialog();
+            new FormRegistrazione().ShowDialog();
             this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLogin form = new FormLogin();
-            form.ShowDialog();
+            new FormLogin().ShowDialog();
             this.Close();
         }
     }

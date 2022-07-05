@@ -51,6 +51,14 @@ namespace WindowsFormApp
             this.lblAnno = new System.Windows.Forms.Label();
             this.txtNumeroEdizione = new System.Windows.Forms.TextBox();
             this.lblNumEdizione = new System.Windows.Forms.Label();
+            this.cbVincitore = new System.Windows.Forms.ComboBox();
+            this.cbLuogo = new System.Windows.Forms.ComboBox();
+            this.cbOrganizzatore = new System.Windows.Forms.ComboBox();
+            this.lblLuogo = new System.Windows.Forms.Label();
+            this.lblOrganizzatore = new System.Windows.Forms.Label();
+            this.lblVincitore = new System.Windows.Forms.Label();
+            this.btnCreaTorneo = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -238,11 +246,93 @@ namespace WindowsFormApp
             this.lblNumEdizione.TabIndex = 19;
             this.lblNumEdizione.Text = "Numero edizione";
             // 
+            // cbVincitore
+            // 
+            this.cbVincitore.FormattingEnabled = true;
+            this.cbVincitore.Location = new System.Drawing.Point(232, 435);
+            this.cbVincitore.Name = "cbVincitore";
+            this.cbVincitore.Size = new System.Drawing.Size(321, 28);
+            this.cbVincitore.TabIndex = 23;
+            this.cbVincitore.Text = "Vincitore";
+            // 
+            // cbLuogo
+            // 
+            this.cbLuogo.FormattingEnabled = true;
+            this.cbLuogo.Location = new System.Drawing.Point(232, 503);
+            this.cbLuogo.Name = "cbLuogo";
+            this.cbLuogo.Size = new System.Drawing.Size(321, 28);
+            this.cbLuogo.TabIndex = 24;
+            this.cbLuogo.Text = "Luogo";
+            // 
+            // cbOrganizzatore
+            // 
+            this.cbOrganizzatore.FormattingEnabled = true;
+            this.cbOrganizzatore.Location = new System.Drawing.Point(232, 469);
+            this.cbOrganizzatore.Name = "cbOrganizzatore";
+            this.cbOrganizzatore.Size = new System.Drawing.Size(321, 28);
+            this.cbOrganizzatore.TabIndex = 25;
+            this.cbOrganizzatore.Text = "Organizzatore";
+            // 
+            // lblLuogo
+            // 
+            this.lblLuogo.AutoSize = true;
+            this.lblLuogo.Location = new System.Drawing.Point(13, 509);
+            this.lblLuogo.Name = "lblLuogo";
+            this.lblLuogo.Size = new System.Drawing.Size(51, 20);
+            this.lblLuogo.TabIndex = 28;
+            this.lblLuogo.Text = "Luogo";
+            // 
+            // lblOrganizzatore
+            // 
+            this.lblOrganizzatore.AutoSize = true;
+            this.lblOrganizzatore.Location = new System.Drawing.Point(13, 476);
+            this.lblOrganizzatore.Name = "lblOrganizzatore";
+            this.lblOrganizzatore.Size = new System.Drawing.Size(103, 20);
+            this.lblOrganizzatore.TabIndex = 27;
+            this.lblOrganizzatore.Text = "Organizzatore";
+            // 
+            // lblVincitore
+            // 
+            this.lblVincitore.AutoSize = true;
+            this.lblVincitore.Location = new System.Drawing.Point(13, 443);
+            this.lblVincitore.Name = "lblVincitore";
+            this.lblVincitore.Size = new System.Drawing.Size(68, 20);
+            this.lblVincitore.TabIndex = 26;
+            this.lblVincitore.Text = "Vincitore";
+            // 
+            // btnCreaTorneo
+            // 
+            this.btnCreaTorneo.Location = new System.Drawing.Point(13, 568);
+            this.btnCreaTorneo.Name = "btnCreaTorneo";
+            this.btnCreaTorneo.Size = new System.Drawing.Size(115, 29);
+            this.btnCreaTorneo.TabIndex = 29;
+            this.btnCreaTorneo.Text = "Crea torneo";
+            this.btnCreaTorneo.UseVisualStyleBackColor = true;
+            this.btnCreaTorneo.Click += new System.EventHandler(this.btnCreaTorneo_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(13, 21);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(51, 29);
+            this.btnBack.TabIndex = 30;
+            this.btnBack.Text = "<---";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FormCreaTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 569);
+            this.ClientSize = new System.Drawing.Size(582, 625);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnCreaTorneo);
+            this.Controls.Add(this.lblLuogo);
+            this.Controls.Add(this.lblOrganizzatore);
+            this.Controls.Add(this.lblVincitore);
+            this.Controls.Add(this.cbOrganizzatore);
+            this.Controls.Add(this.cbLuogo);
+            this.Controls.Add(this.cbVincitore);
             this.Controls.Add(this.txtAnno);
             this.Controls.Add(this.lblAnno);
             this.Controls.Add(this.txtNumeroEdizione);
@@ -267,6 +357,7 @@ namespace WindowsFormApp
             this.Controls.Add(this.lblNome);
             this.Name = "FormCreaTorneo";
             this.Text = "FormCreaTorneo";
+            this.Load += new System.EventHandler(this.FormCreaTorneo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +387,13 @@ namespace WindowsFormApp
         private System.Windows.Forms.Label lblAnno;
         private System.Windows.Forms.TextBox txtNumeroEdizione;
         private System.Windows.Forms.Label lblNumEdizione;
+        private System.Windows.Forms.ComboBox cbVincitore;
+        private System.Windows.Forms.ComboBox cbLuogo;
+        private System.Windows.Forms.ComboBox cbOrganizzatore;
+        private System.Windows.Forms.Label lblLuogo;
+        private System.Windows.Forms.Label lblOrganizzatore;
+        private System.Windows.Forms.Label lblVincitore;
+        private System.Windows.Forms.Button btnCreaTorneo;
+        private System.Windows.Forms.Button btnBack;
     }
 }

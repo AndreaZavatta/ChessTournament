@@ -199,5 +199,12 @@ namespace WindowsFormApp
 
             return err.ToString();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormMain().ShowDialog();
+            this.Close();
+        }
     }
 }

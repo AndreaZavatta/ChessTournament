@@ -18,14 +18,18 @@ namespace WindowsFormApp
 
         private void btnRegistrazione_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormRegistrazione form = new FormRegistrazione();
             form.ShowDialog();
+            this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormLogin form = new FormLogin();
             form.ShowDialog();
+            this.Close();
         }
     }
 }

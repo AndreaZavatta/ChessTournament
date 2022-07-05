@@ -40,13 +40,21 @@ namespace WindowsFormApp
                 }
                 else
                 {
-                    LoggedUser.Email = txtEmail.Text;
-                    LoggedUser.Nome = persona.Nome;
-                    LoggedUser.Cognome = persona.Cognome;
-                    LoggedUser.Tipo = persona.Tipo;
+                    this.Hide();
+                    Chess chess = new Chess();
+                    saveLoggedUser(persona);
+                    chess.ShowDialog();
                     this.Close();
                 }
             }
+        }
+
+        private void saveLoggedUser(Persona persona)
+        {
+            LoggedUser.Email = txtEmail.Text;
+            LoggedUser.Nome = persona.Nome;
+            LoggedUser.Cognome = persona.Cognome;
+            LoggedUser.Tipo = persona.Tipo;
         }
 
         private Persona GetUser(string email, string password)

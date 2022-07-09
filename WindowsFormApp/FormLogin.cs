@@ -41,18 +41,18 @@ namespace WindowsFormApp
                 else
                 {
                     saveLoggedUser(persona);
-                    SwitchPage(persona);
+                    SwitchPage(persona.Tipo);
                 }
             }
         }
 
-        private Form GetPageFromUserType(Persona person)
+        private Form GetPageFromUserType(Persona.TipoUtente tipo)
         {
-            if (person.Tipo.Equals(Persona.TipoUtente.Organizzatore))
+            if (tipo.Equals(Persona.TipoUtente.Organizzatore))
             {
                 return new FormOrganizzatore();
             }
-            else if (person.Tipo.Equals(Persona.TipoUtente.Allenatore))
+            else if (tipo.Equals(Persona.TipoUtente.Allenatore))
             {
                 return new FormAllenatore();
             }
@@ -62,10 +62,10 @@ namespace WindowsFormApp
             }
         }
 
-        private void SwitchPage(Persona persona)
+        private void SwitchPage(Persona.TipoUtente tipo)
         {
             this.Hide();
-            GetPageFromUserType(persona).ShowDialog();
+            GetPageFromUserType(tipo).ShowDialog();
             this.Close();
         }
 

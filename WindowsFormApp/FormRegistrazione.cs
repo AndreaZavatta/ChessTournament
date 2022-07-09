@@ -126,7 +126,7 @@ namespace WindowsFormApp
                 }
 
                 MessageBox.Show("Registrazione completata con successo");
-                this.Close();
+                btnBack_Click(null, null);
             }
             catch(Exception ex)
             {

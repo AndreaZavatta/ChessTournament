@@ -125,8 +125,9 @@ namespace WindowsFormApp
             // Details
             // 
             this.Details.HeaderText = "";
+            this.Details.Image = global::WindowsFormApp.Properties.Resources.icons8_info_24;
             this.Details.Name = "Details";
-            this.Details.Width = 20;
+            this.Details.Width = 25;
             // 
             // FormVisualizzaTornei
             // 

@@ -15,7 +15,7 @@ namespace Context.Data
         public int CodicePersona { get; set; }
         public int PartiteVinte { get; set; }
         public string Federazione { get; set; }
-        public int Rating { get; set; }
+        public int? Rating { get; set; }
 
         [ForeignKey("CodicePersona")]
         public virtual Persona Persona { get; set; }

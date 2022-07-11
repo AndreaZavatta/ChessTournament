@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Castle.Core.Internal;
 
 namespace WindowsFormApp
 {
@@ -145,7 +146,7 @@ namespace WindowsFormApp
         private void btnSalva_Click(object sender, EventArgs e)
         {
             var error = GetErrorMessage();
-            if (!String.IsNullOrEmpty(error))
+            if (!error.IsNullOrEmpty())
             {
                 MessageBox.Show(error, "Attenzione!");
             }

@@ -11,17 +11,22 @@ using Context.Data;
 
 namespace WindowsFormApp
 {
-    public partial class FormVisualizzaTornei : Form
+    public partial class FormHomePage : Form
     {
         private string _connectionString;
-        public FormVisualizzaTornei()
+        public FormHomePage()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             InitializeComponent();
         }
 
-        private void FormVisualizzaTornei_Load(object sender, EventArgs e)
+        private void FormHomePage_Load(object sender, EventArgs e)
         {
+            if (LoggedUser.Tipo != Persona.TipoUtente.Organizzatore)
+            {
+                btnCreaTorneo.Visible = false;
+            }
+
             using (MyDbContext ctx = new MyDbContext(_connectionString))
             {
                 List<Torneo> listTornei = ctx.Tornei.ToList();
@@ -30,32 +35,39 @@ namespace WindowsFormApp
                 cbTorneo.DisplayMember = "Nome";
                 cbTorneo.DataSource = listTornei;
             }
+
         }
 
         private void cbTorneo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (MyDbContext ctx = new MyDbContext(_connectionString))
-            {
-                var list = ctx.Edizioni.Where(q => q.CodiceTorneo.Equals(cbTorneo.SelectedValue))
-                    .Select(q=>new {Descrizione = q.Descrizione, DataInizio=q.DataInizio, DataFine=q.DataFine}).ToList();
-                dgvTornei.DataSource = list;
-            }
+            UpdateTable();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        public void UpdateTable()
         {
-            this.Hide();
-            SharedClass.getFormUser().ShowDialog();
-            this.Close();
+            using MyDbContext ctx = new MyDbContext(_connectionString);
+            var list = ctx.Edizioni.Where(q => q.CodiceTorneo.Equals(cbTorneo.SelectedValue))
+                .Select(q => new { Codice = q.Codice, Descrizione = q.Descrizione, NumEdizione = q.NumEdizione, DataInizio = q.DataInizio, DataFine = q.DataFine}).ToList();
+            dgvTornei.DataSource = list;
         }
+
 
         private void dgvTornei_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
             if (e.ColumnIndex == dgv.Columns["Details"].Index)
             {
-
+                int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
+                new FormDettaglioEdzione(codice).ShowDialog();
             }
         }
+
+        private void btnCreaTorneo_Click(object sender, EventArgs e)
+        {
+            var form = new FormCreaTorneo();
+            form.Tag = this;
+            form.ShowDialog();
+        }
+
     }
 }

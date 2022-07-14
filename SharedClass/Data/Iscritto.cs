@@ -11,13 +11,12 @@ namespace Context.Data
     {
         [Key] 
         public int Codice { get; set; }
-        public int IsVisibile { get; set; }
-        public String Testo { get; set; }
-        public int? CodicePersona { get; set; }
-        public int? CodicePartita { get; set; }
+        public int? CodiceGiocatore { get; set; }
+        public int? CodiceEdizione { get; set; }
+        public DateTime? Data { get; set; }
 
-        [ForeignKey("CodicePersona")]
-        public virtual Persona Persona { get; set; }
+        [ForeignKey("CodiceGiocatore")]
+        public virtual Giocatore Giocatore { get; set; }
         [ForeignKey("CodiceEdizione")]
         public virtual Edizione Edizione { get; set; }
     }

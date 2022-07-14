@@ -36,33 +36,13 @@ namespace WindowsFormApp
                 else
                 {
                     saveLoggedUser(persona);
-                    SwitchPage(persona.Tipo);
+                    this.Hide();
+                    new FormHomePage().ShowDialog();
+                    this.Close();
                 }
             }
         }
 
-        private Form GetPageFromUserType(Persona.TipoUtente tipo)
-        {
-            if (tipo.Equals(Persona.TipoUtente.Organizzatore))
-            {
-                return new FormOrganizzatore();
-            }
-            else if (tipo.Equals(Persona.TipoUtente.Allenatore))
-            {
-                return new FormAllenatore();
-            }
-            else
-            {
-                return new FormGiocatore();
-            }
-        }
-
-        private void SwitchPage(Persona.TipoUtente tipo)
-        {
-            this.Hide();
-            GetPageFromUserType(tipo).ShowDialog();
-            this.Close();
-        }
 
         private void saveLoggedUser(Persona persona)
         {

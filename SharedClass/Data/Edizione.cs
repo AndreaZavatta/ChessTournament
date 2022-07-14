@@ -25,7 +25,7 @@ namespace Context.Data
         [ForeignKey("CodiceTorneo")]
         public virtual Torneo Torneo { get; set; }
         [ForeignKey("CodiceVincitore")]
-        public virtual Giocatore Giocatore { get; set; }
+        public virtual Iscritto Vincitore { get; set; }
         [ForeignKey("CodiceOrganizzatore")]
         public virtual Organizzatore Organizzatore { get; set; }
         [ForeignKey("CodiceLuogo")]

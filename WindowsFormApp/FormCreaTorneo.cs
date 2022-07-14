@@ -24,14 +24,8 @@ namespace WindowsFormApp
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new FormOrganizzatore().ShowDialog();
-            this.Close();
-        }
 
-        private void btnCreaTorneo_Click(object sender, EventArgs e)
+        private void btnSalva_Click(object sender, EventArgs e)
         {
             if (txtNome.Text.IsNullOrEmpty())
             {
@@ -67,14 +61,17 @@ namespace WindowsFormApp
                     Descrizione = txtDescrizione.Text,
                     NumEdizione = Convert.ToInt32(txtNumeroEdizione.Text),
                     PremioVincita = Convert.ToInt32(txtPremio.Text),
-                    Codice = torneo.Codice,
+                    CodiceTorneo = torneo.Codice,
                     CodiceLuogo = (int?)cbLuogo.SelectedValue == 0 ? (int?)null : (int?)cbLuogo.SelectedValue,
                     CodiceOrganizzatore = Convert.ToInt32(cbOrganizzatore.SelectedValue),
                     Torneo = torneo
+                    
                 };
                 ctx.Edizioni.Add(edizione);
                 ctx.SaveChanges();
                 MessageBox.Show("Salvataggio avvenuto correttamente");
+                ((FormHomePage)this.Tag).UpdateTable();
+                this.Close();
             }
         }
 
@@ -93,11 +90,6 @@ namespace WindowsFormApp
                 cbOrganizzatore.ValueMember = "Codice";
                 cbOrganizzatore.DisplayMember = "Nome";
 
-                List<Persona> listPersone = ctx.Giocatori.Select(q => q.Persona).ToList();
-                listPersone.Insert(0, new Persona { Nome = "", Codice = 0 });
-                cbVincitore.DataSource = listPersone;
-                cbVincitore.ValueMember = "Codice";
-                cbVincitore.DisplayMember = "Nome";
 
                 List<Luogo> listLuoghi = ctx.Luoghi.ToList();
                 listLuoghi.Insert(0, new Luogo { Nome = "", Codice = 0 });

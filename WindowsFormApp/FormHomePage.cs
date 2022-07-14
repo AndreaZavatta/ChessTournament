@@ -55,7 +55,7 @@ namespace WindowsFormApp
         private void dgvTornei_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-            if (e.ColumnIndex == dgv.Columns["Details"].Index)
+            if (e.ColumnIndex == dgv.Columns["Details"].Index && e.RowIndex >= 0)
             {
                 int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
                 new FormDettaglioEdzione(codice).ShowDialog();

@@ -74,7 +74,7 @@ namespace WindowsFormApp
             this.lblVincitore.Name = "lblVincitore";
             this.lblVincitore.Size = new System.Drawing.Size(68, 20);
             this.lblVincitore.TabIndex = 44;
-            this.lblVincitore.Text = "Giocatore";
+            this.lblVincitore.Text = "Vincitore";
             // 
             // txtAnno
             // 
@@ -131,7 +131,7 @@ namespace WindowsFormApp
             // txtDescrizione
             // 
             this.txtDescrizione.Enabled = false;
-            this.txtDescrizione.Location = new System.Drawing.Point(308, 110);
+            this.txtDescrizione.Location = new System.Drawing.Point(308, 78);
             this.txtDescrizione.Name = "txtDescrizione";
             this.txtDescrizione.Size = new System.Drawing.Size(321, 27);
             this.txtDescrizione.TabIndex = 32;
@@ -139,7 +139,7 @@ namespace WindowsFormApp
             // lblDescrizione
             // 
             this.lblDescrizione.AutoSize = true;
-            this.lblDescrizione.Location = new System.Drawing.Point(172, 114);
+            this.lblDescrizione.Location = new System.Drawing.Point(172, 81);
             this.lblDescrizione.Name = "lblDescrizione";
             this.lblDescrizione.Size = new System.Drawing.Size(86, 20);
             this.lblDescrizione.TabIndex = 31;
@@ -148,7 +148,7 @@ namespace WindowsFormApp
             // txtPremio
             // 
             this.txtPremio.Enabled = false;
-            this.txtPremio.Location = new System.Drawing.Point(308, 78);
+            this.txtPremio.Location = new System.Drawing.Point(308, 111);
             this.txtPremio.Name = "txtPremio";
             this.txtPremio.Size = new System.Drawing.Size(321, 27);
             this.txtPremio.TabIndex = 30;
@@ -156,7 +156,7 @@ namespace WindowsFormApp
             // lblPremio
             // 
             this.lblPremio.AutoSize = true;
-            this.lblPremio.Location = new System.Drawing.Point(172, 81);
+            this.lblPremio.Location = new System.Drawing.Point(172, 114);
             this.lblPremio.Name = "lblPremio";
             this.lblPremio.Size = new System.Drawing.Size(103, 20);
             this.lblPremio.TabIndex = 29;

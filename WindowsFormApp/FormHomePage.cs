@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Context.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace WindowsFormApp
 {
     public partial class FormHomePage : Form
     {
         private string _connectionString;
+
         public FormHomePage()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
@@ -75,61 +77,118 @@ namespace WindowsFormApp
         private void dgvTornei_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-            if (isColumnDetails(e, dgv))
+            int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
+            if (IsColumnDetails(e, dgv))
             {
-                int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
                 new FormDettaglioEdzione(codice).ShowDialog();
             }
-            else if (isColumnPartecipa(e, dgv))
+            else if (IsColumnElimina(e, dgv))
             {
-                int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
-                using (MyDbContext ctx = new MyDbContext(_connectionString))
-                {
-                    int id = ctx.Edizioni.Find(codice).CodiceTorneo;
-                    int maxPartecipanti = ctx.Tornei.Find(id).MaxPartecipanti;
-                    int maxRating = ctx.Tornei.Find(id).RatingMassimo;
-                    int minRating = ctx.Tornei.Find(id).RatingMinimo;
-                    int numIscritti = ctx.Iscritti.Select(q => q.CodiceEdizione == codice).ToList().Count;
-                    if (numIscritti >= maxPartecipanti)
-                    {
-                        MessageBox.Show("Non puoi partecipare al torneo, massimo numero di partecipanti raggiunto!");
-                    }
-                    else if (LoggedUser.Tipo == Persona.TipoUtente.Giocatore)
-                    {
-                        int? codPersona = ctx.Persone?.FirstOrDefault(q => q.Email.ToLower() == LoggedUser.Email.ToLower())?.Codice;
-                        if (codPersona != null)
-                        {
-                            int? codGiocatore = (ctx.Giocatori?.FirstOrDefault(q => q.CodicePersona == codPersona)?.Codice);
-                            int? rating = (ctx.Giocatori?.Find(codGiocatore)?.Rating);
-                            if (rating != null)
-                            {
-                                if (rating > maxRating || rating < minRating)
-                                {
-                                    MessageBox.Show("Non puoi partecipare al torneo, il tuo rating non lo permette!");
-                                }
-                                else
-                                {
-                                    ctx.Iscritti.Add(new Iscritto
-                                    {
-                                        CodiceGiocatore = codGiocatore,
-                                        CodiceEdizione = codice,
-                                        Data = DateTime.Now
-                                    });
-                                }
-                            }
-                        }
-                    }
-                }
-                }
+                EliminazioneEdizione(codice);
             }
 
-        private static bool isColumnDetails(DataGridViewCellEventArgs e, DataGridView dgv)
+            else if (IsColumnPartecipa(e, dgv))
+            {
+                IscrizioneEdizione(codice);
+            }
+        }
+
+        private void EliminazioneEdizione(int codice)
+        {
+            using (MyDbContext ctx = new MyDbContext(_connectionString))
+            {
+                Edizione edToDelete = ctx.Edizioni.FirstOrDefault(q => q.Codice == codice);
+                if (edToDelete != null)
+                {
+                    edToDelete.CodiceVincitore = null;
+                    ctx.SaveChanges();
+                    var list = ctx.Iscritti.Where(q => q.CodiceEdizione == codice);
+                    ctx.Iscritti.RemoveRange(list);
+                    ctx.Edizioni.Remove(edToDelete);
+                    ctx.SaveChanges();
+                    UpdateTable();
+                }
+            }
+        }
+
+        private void IscrizioneEdizione(int codice)
+        {
+            DialogResult dialogResult = MessageBox.Show("Confermi l'iscrizione?", "Iscrizione", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                    Edizione edizione = ctx.Edizioni
+                        .Include(q => q.Torneo)
+                        .FirstOrDefault(q => q.Codice == codice);
+
+                    if (edizione == null)
+                    {
+                        MessageBox.Show("Edizione non trovata");
+                        return;
+                    }
+
+                    int numIscritti = ctx.Iscritti.Select(q => q.CodiceEdizione == codice).Count();
+                    if (numIscritti >= edizione.Torneo.MaxPartecipanti)
+                    {
+                        MessageBox.Show(
+                            "Non puoi partecipare al torneo, massimo numero di partecipanti raggiunto!");
+                        return;
+                    }
+
+                    if (LoggedUser.Tipo != Persona.TipoUtente.Giocatore)
+                    {
+                        MessageBox.Show("Operazione riservata ai giocatori");
+                        return;
+                    }
+
+                    Giocatore giocatore = ctx.Giocatori.FirstOrDefault(q => q.CodicePersona == LoggedUser.Codice);
+                    if (giocatore == null)
+                    {
+                        MessageBox.Show("Giocatore non trovato!");
+                        return;
+                    }
+
+                    if (ctx.Iscritti.Any(q => q.CodiceEdizione == codice && q.CodiceGiocatore == giocatore.Codice))
+                    {
+                        MessageBox.Show("Sei già iscritto a questa edizione");
+                        return;
+                    }
+
+                    if (giocatore.Rating > edizione.Torneo.RatingMassimo ||
+                        giocatore.Rating < edizione.Torneo.RatingMinimo)
+                    {
+                        MessageBox.Show("Non puoi partecipare al torneo, il tuo rating non lo permette!\n" +
+                                            $"Rating massimo: {edizione.Torneo.RatingMassimo}\n" +
+                                            $"Rating minimo: {edizione.Torneo.RatingMinimo}\n" +
+                                            $"Il tuo rating: {giocatore.Rating}");
+                        return;
+                    }
+
+                    ctx.Iscritti.Add(new Iscritto
+                    {
+                        CodiceGiocatore = giocatore.Codice,
+                        CodiceEdizione = codice,
+                        Data = DateTime.Now
+                    });
+                    ctx.SaveChanges();
+                }
+            }
+        }
+
+        private bool IsColumnDetails(DataGridViewCellEventArgs e, DataGridView dgv)
         {
             return e.ColumnIndex == dgv.Columns["Details"].Index && e.RowIndex >= 0;
         }
-        private static bool isColumnPartecipa(DataGridViewCellEventArgs e, DataGridView dgv)
+
+        private bool IsColumnPartecipa(DataGridViewCellEventArgs e, DataGridView dgv)
         {
             return e.ColumnIndex == dgv.Columns["Partecipa"].Index && e.RowIndex >= 0;
+        }
+
+        private bool IsColumnElimina(DataGridViewCellEventArgs e, DataGridView dgv)
+        {
+            return e.ColumnIndex == dgv.Columns["Elimina"].Index && e.RowIndex >= 0;
         }
 
         private void btnCreaTorneo_Click(object sender, EventArgs e)
@@ -138,6 +197,6 @@ namespace WindowsFormApp
             form.Tag = this;
             form.ShowDialog();
         }
-
     }
 }
+

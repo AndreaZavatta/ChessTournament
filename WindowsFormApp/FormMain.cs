@@ -46,6 +46,7 @@ namespace WindowsFormApp
 
         private void saveLoggedUser(Persona persona)
         {
+            LoggedUser.Codice = persona.Codice;
             LoggedUser.Email = txtEmail.Text;
             LoggedUser.Nome = persona.Nome;
             LoggedUser.Cognome = persona.Cognome;

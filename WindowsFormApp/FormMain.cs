@@ -256,5 +256,26 @@ namespace WindowsFormApp
                     break;
             }
         }
+
+        private void btnGiocatore_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "zavattaandrea@gmail.com";
+            txtPassword.Text = "Messiandry01";
+            btnLogin_Click(sender, e);
+        }
+
+        private void btnOrganizzatore_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "andrea";
+            txtPassword.Text = "andrea";
+            btnLogin_Click(sender, e);
+        }
+
+        private void btnAllenatore_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "marcoraggini@gmail.com";
+            txtPassword.Text = "marcoraggini";
+            btnLogin_Click(sender, e);
+        }
     }
 }

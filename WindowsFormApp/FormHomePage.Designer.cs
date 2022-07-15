@@ -39,6 +39,8 @@ namespace WindowsFormApp
             this.DataInizio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataFine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Details = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Partecipa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Elimina = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTornei)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,9 @@ namespace WindowsFormApp
             this.NumEdizione,
             this.DataInizio,
             this.DataFine,
-            this.Details});
+            this.Details,
+            this.Partecipa,
+            this.Elimina});
             this.dgvTornei.Location = new System.Drawing.Point(12, 46);
             this.dgvTornei.Name = "dgvTornei";
             this.dgvTornei.RowHeadersWidth = 51;
@@ -93,57 +97,87 @@ namespace WindowsFormApp
             // 
             // Codice
             // 
+            this.Codice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Codice.DataPropertyName = "Codice";
             this.Codice.HeaderText = "Codice";
             this.Codice.MinimumWidth = 6;
             this.Codice.Name = "Codice";
             this.Codice.ReadOnly = true;
-            this.Codice.Width = 125;
+            this.Codice.Width = 84;
             // 
             // Descrizione
             // 
+            this.Descrizione.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Descrizione.DataPropertyName = "Descrizione";
             this.Descrizione.HeaderText = "Descrizione";
             this.Descrizione.MinimumWidth = 6;
             this.Descrizione.Name = "Descrizione";
             this.Descrizione.ReadOnly = true;
-            this.Descrizione.Width = 200;
             // 
             // NumEdizione
             // 
+            this.NumEdizione.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.NumEdizione.DataPropertyName = "NumEdizione";
             this.NumEdizione.HeaderText = "Numero edizione";
             this.NumEdizione.MinimumWidth = 6;
             this.NumEdizione.Name = "NumEdizione";
             this.NumEdizione.ReadOnly = true;
-            this.NumEdizione.Width = 125;
+            this.NumEdizione.Width = 140;
             // 
             // DataInizio
             // 
+            this.DataInizio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.DataInizio.DataPropertyName = "DataInizio";
             this.DataInizio.HeaderText = "Data inizio";
             this.DataInizio.MinimumWidth = 6;
             this.DataInizio.Name = "DataInizio";
             this.DataInizio.ReadOnly = true;
-            this.DataInizio.Width = 80;
+            this.DataInizio.Width = 101;
             // 
             // DataFine
             // 
+            this.DataFine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.DataFine.DataPropertyName = "DataFine";
             this.DataFine.HeaderText = "Data fine";
             this.DataFine.MinimumWidth = 6;
             this.DataFine.Name = "DataFine";
             this.DataFine.ReadOnly = true;
-            this.DataFine.Width = 80;
+            this.DataFine.Width = 92;
             // 
             // Details
             // 
+            this.Details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Details.DataPropertyName = "Details";
             this.Details.HeaderText = "";
             this.Details.Image = global::WindowsFormApp.Properties.Resources.icons8_info_24;
             this.Details.MinimumWidth = 6;
             this.Details.Name = "Details";
             this.Details.ReadOnly = true;
             this.Details.Width = 25;
+            // 
+            // Partecipa
+            // 
+            this.Partecipa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Partecipa.DataPropertyName = "Partecipa";
+            this.Partecipa.HeaderText = "";
+            this.Partecipa.Image = global::WindowsFormApp.Properties.Resources.icons8_join_24;
+            this.Partecipa.MinimumWidth = 6;
+            this.Partecipa.Name = "Partecipa";
+            this.Partecipa.ReadOnly = true;
+            this.Partecipa.Visible = false;
+            this.Partecipa.Width = 25;
+            // 
+            // Elimina
+            // 
+            this.Elimina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Elimina.DataPropertyName = "Elimina";
+            this.Elimina.HeaderText = "";
+            this.Elimina.Image = global::WindowsFormApp.Properties.Resources.icons8_delete_24;
+            this.Elimina.MinimumWidth = 6;
+            this.Elimina.Name = "Elimina";
+            this.Elimina.ReadOnly = true;
+            this.Elimina.Visible = false;
+            this.Elimina.Width = 25;
             // 
             // FormHomePage
             // 
@@ -175,5 +209,7 @@ namespace WindowsFormApp
         private System.Windows.Forms.DataGridViewTextBoxColumn DataInizio;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataFine;
         private System.Windows.Forms.DataGridViewImageColumn Details;
+        private System.Windows.Forms.DataGridViewImageColumn Partecipa;
+        private System.Windows.Forms.DataGridViewImageColumn Elimina;
     }
 }

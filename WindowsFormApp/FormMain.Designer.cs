@@ -34,6 +34,9 @@ namespace WindowsFormApp
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLogin = new System.Windows.Forms.TabPage();
+            this.btnAllenatore = new System.Windows.Forms.Button();
+            this.btnOrganizzatore = new System.Windows.Forms.Button();
+            this.btnGiocatore = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -82,6 +85,9 @@ namespace WindowsFormApp
             // 
             // tabLogin
             // 
+            this.tabLogin.Controls.Add(this.btnAllenatore);
+            this.tabLogin.Controls.Add(this.btnOrganizzatore);
+            this.tabLogin.Controls.Add(this.btnGiocatore);
             this.tabLogin.Controls.Add(this.txtPassword);
             this.tabLogin.Controls.Add(this.txtEmail);
             this.tabLogin.Controls.Add(this.lblPassword);
@@ -95,6 +101,36 @@ namespace WindowsFormApp
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Login";
             this.tabLogin.UseVisualStyleBackColor = true;
+            // 
+            // btnAllenatore
+            // 
+            this.btnAllenatore.Location = new System.Drawing.Point(552, 369);
+            this.btnAllenatore.Name = "btnAllenatore";
+            this.btnAllenatore.Size = new System.Drawing.Size(94, 29);
+            this.btnAllenatore.TabIndex = 13;
+            this.btnAllenatore.Text = "Allenatore";
+            this.btnAllenatore.UseVisualStyleBackColor = true;
+            this.btnAllenatore.Click += new System.EventHandler(this.btnAllenatore_Click);
+            // 
+            // btnOrganizzatore
+            // 
+            this.btnOrganizzatore.Location = new System.Drawing.Point(325, 369);
+            this.btnOrganizzatore.Name = "btnOrganizzatore";
+            this.btnOrganizzatore.Size = new System.Drawing.Size(94, 29);
+            this.btnOrganizzatore.TabIndex = 12;
+            this.btnOrganizzatore.Text = "Organizzatore";
+            this.btnOrganizzatore.UseVisualStyleBackColor = true;
+            this.btnOrganizzatore.Click += new System.EventHandler(this.btnOrganizzatore_Click);
+            // 
+            // btnGiocatore
+            // 
+            this.btnGiocatore.Location = new System.Drawing.Point(89, 369);
+            this.btnGiocatore.Name = "btnGiocatore";
+            this.btnGiocatore.Size = new System.Drawing.Size(94, 29);
+            this.btnGiocatore.TabIndex = 11;
+            this.btnGiocatore.Text = "Giocatore";
+            this.btnGiocatore.UseVisualStyleBackColor = true;
+            this.btnGiocatore.Click += new System.EventHandler(this.btnGiocatore_Click);
             // 
             // txtPassword
             // 
@@ -421,5 +457,8 @@ namespace WindowsFormApp
         private Label lblCognome;
         private TextBox txtNome;
         private Label lblNome;
+        private Button btnAllenatore;
+        private Button btnOrganizzatore;
+        private Button btnGiocatore;
     }
 }

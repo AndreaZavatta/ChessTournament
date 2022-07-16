@@ -307,7 +307,7 @@ namespace WindowsFormApp
                         join e2 in ctx.Edizioni on i.Codice equals e2.CodiceVincitore into edizione
                         from e2 in edizione.DefaultIfEmpty()
                         where g.Codice == (int)cbGiocatore.SelectedValue
-                        select new { Edizione = ed.Descrizione, Vincitore = (e2 == null ? "" : "Vincitore") };
+                        select new { Edizione = ed.Descrizione, Vincitore = (e2 == null ? "No" : "Si") };
 
                     dgvStatistica2.DataSource = query.ToList();
                 }

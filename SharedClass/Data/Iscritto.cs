@@ -11,8 +11,8 @@ namespace Context.Data
     {
         [Key] 
         public int Codice { get; set; }
-        public int? CodiceGiocatore { get; set; }
-        public int? CodiceEdizione { get; set; }
+        public int CodiceGiocatore { get; set; }
+        public int CodiceEdizione { get; set; }
         public DateTime? Data { get; set; }
 
         [ForeignKey("CodiceGiocatore")]

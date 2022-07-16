@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using Context.Data;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Crypto.Agreement.JPake;
 
 namespace WindowsFormApp
 {
@@ -197,6 +198,45 @@ namespace WindowsFormApp
             form.Tag = this;
             form.ShowDialog();
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab.Name == "tabStatistica1")
+            {
+                tbStatistica1.Text = "ISCRITTI ORDINATI PER NUMERO DI PARTECIPAZIONI";
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                    var iscrizioni = ctx.Iscritti
+                        .GroupBy(q => q.CodiceGiocatore)
+                        .Select(q => new
+                        {
+                            CodiceGiocatore = q.Key,
+                            numero = q.Count()
+                        });
+
+                    var query =
+                        from i in iscrizioni
+                        join tg in ctx.Giocatori on i.CodiceGiocatore equals tg.Codice
+                        join tp in ctx.Persone on tg.CodicePersona equals tp.Codice
+                        orderby i.numero descending
+                        select new { Nome = tp.Nome, Cognome = tp.Cognome, Partecipazioni = i.numero };
+
+                    dgvStats1.DataSource = query.ToList();
+                }
+
+            }
+
+        }
+
+        /*
+   select p.Nome, p.Cognome, numero
+   from (select i.CodiceGiocatore, count(*) numero
+   from iscritto i
+   group by i.CodiceGiocatore ) partecipazioni
+   inner join giocatore g on partecipazioni.CodiceGiocatore = g.Codice
+   inner join persona p on g.CodicePersona = p.Codice
+   order by numero desc
+*/
     }
 }
 

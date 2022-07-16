@@ -56,6 +56,13 @@ namespace WindowsFormApp
             this.dgvStatistica2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabStatistica3 = new System.Windows.Forms.TabPage();
+            this.lblStatistica3 = new System.Windows.Forms.Label();
+            this.cbStatistica3 = new System.Windows.Forms.ComboBox();
+            this.tbStatistica3 = new System.Windows.Forms.TextBox();
+            this.dgvStatistica3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabTornei.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTornei)).BeginInit();
@@ -63,6 +70,8 @@ namespace WindowsFormApp
             ((System.ComponentModel.ISupportInitialize)(this.dgvStats1)).BeginInit();
             this.tabStatistica2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatistica2)).BeginInit();
+            this.tabStatistica3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStatistica3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -73,6 +82,7 @@ namespace WindowsFormApp
             this.tabControl1.Controls.Add(this.tabTornei);
             this.tabControl1.Controls.Add(this.tabStatistica1);
             this.tabControl1.Controls.Add(this.tabStatistica2);
+            this.tabControl1.Controls.Add(this.tabStatistica3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -125,6 +135,7 @@ namespace WindowsFormApp
             this.dgvTornei.RowTemplate.Height = 29;
             this.dgvTornei.Size = new System.Drawing.Size(1064, 520);
             this.dgvTornei.TabIndex = 7;
+            this.dgvTornei.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTornei_CellContentClick);
             // 
             // Codice
             // 
@@ -226,6 +237,7 @@ namespace WindowsFormApp
             this.cbTorneo.Name = "cbTorneo";
             this.cbTorneo.Size = new System.Drawing.Size(298, 28);
             this.cbTorneo.TabIndex = 8;
+            this.cbTorneo.SelectedIndexChanged += new System.EventHandler(this.cbTorneo_SelectedIndexChanged);
             // 
             // tabStatistica1
             // 
@@ -367,6 +379,82 @@ namespace WindowsFormApp
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 300;
             // 
+            // tabStatistica3
+            // 
+            this.tabStatistica3.Controls.Add(this.lblStatistica3);
+            this.tabStatistica3.Controls.Add(this.cbStatistica3);
+            this.tabStatistica3.Controls.Add(this.tbStatistica3);
+            this.tabStatistica3.Controls.Add(this.dgvStatistica3);
+            this.tabStatistica3.Location = new System.Drawing.Point(4, 29);
+            this.tabStatistica3.Name = "tabStatistica3";
+            this.tabStatistica3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStatistica3.Size = new System.Drawing.Size(1088, 575);
+            this.tabStatistica3.TabIndex = 3;
+            this.tabStatistica3.Text = "Statistica 3";
+            this.tabStatistica3.UseVisualStyleBackColor = true;
+            // 
+            // lblStatistica3
+            // 
+            this.lblStatistica3.AutoSize = true;
+            this.lblStatistica3.Location = new System.Drawing.Point(54, 103);
+            this.lblStatistica3.Name = "lblStatistica3";
+            this.lblStatistica3.Size = new System.Drawing.Size(78, 20);
+            this.lblStatistica3.TabIndex = 39;
+            this.lblStatistica3.Text = "Allenatore";
+            // 
+            // cbStatistica3
+            // 
+            this.cbStatistica3.FormattingEnabled = true;
+            this.cbStatistica3.Location = new System.Drawing.Point(161, 100);
+            this.cbStatistica3.Name = "cbStatistica3";
+            this.cbStatistica3.Size = new System.Drawing.Size(321, 28);
+            this.cbStatistica3.TabIndex = 38;
+            this.cbStatistica3.SelectedIndexChanged += new System.EventHandler(this.cbStatistica3_SelectedIndexChanged);
+            // 
+            // tbStatistica3
+            // 
+            this.tbStatistica3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbStatistica3.BackColor = System.Drawing.Color.White;
+            this.tbStatistica3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbStatistica3.Location = new System.Drawing.Point(6, 1);
+            this.tbStatistica3.Multiline = true;
+            this.tbStatistica3.Name = "tbStatistica3";
+            this.tbStatistica3.ReadOnly = true;
+            this.tbStatistica3.Size = new System.Drawing.Size(1076, 93);
+            this.tbStatistica3.TabIndex = 37;
+            this.tbStatistica3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgvStatistica3
+            // 
+            this.dgvStatistica3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStatistica3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dgvStatistica3.Location = new System.Drawing.Point(6, 135);
+            this.dgvStatistica3.Name = "dgvStatistica3";
+            this.dgvStatistica3.RowHeadersWidth = 51;
+            this.dgvStatistica3.RowTemplate.Height = 29;
+            this.dgvStatistica3.Size = new System.Drawing.Size(1076, 438);
+            this.dgvStatistica3.TabIndex = 36;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cognome";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cognome";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // FormHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -386,6 +474,9 @@ namespace WindowsFormApp
             this.tabStatistica2.ResumeLayout(false);
             this.tabStatistica2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatistica2)).EndInit();
+            this.tabStatistica3.ResumeLayout(false);
+            this.tabStatistica3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStatistica3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,5 +510,12 @@ namespace WindowsFormApp
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Label lblGiocatore;
         private System.Windows.Forms.ComboBox cbGiocatore;
+        private System.Windows.Forms.TabPage tabStatistica3;
+        private System.Windows.Forms.Label lblStatistica3;
+        private System.Windows.Forms.ComboBox cbStatistica3;
+        private System.Windows.Forms.TextBox tbStatistica3;
+        private System.Windows.Forms.DataGridView dgvStatistica3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

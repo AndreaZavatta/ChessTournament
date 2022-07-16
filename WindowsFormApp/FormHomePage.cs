@@ -76,7 +76,7 @@ namespace WindowsFormApp
         }
 
 
-        private void dgvTornei_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTornei_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
             int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
@@ -86,7 +86,13 @@ namespace WindowsFormApp
             }
             else if (IsColumnElimina(e, dgv))
             {
-                EliminazioneEdizione(codice);
+                DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler eliminare questa edizione?", "Eliminazione", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminazioneEdizione(codice);
+                    MessageBox.Show("Salvataggio avvenuto correttamente");
+                }
+
             }
 
             else if (IsColumnPartecipa(e, dgv))
@@ -246,6 +252,26 @@ namespace WindowsFormApp
                     cbGiocatore.DataSource = listGiocatori;
                 }
             }
+            else if (tabControl1.SelectedTab.Name == "tabStatistica3")
+            {
+                tbStatistica3.Text = "visualizzare tutti i giocatori che ha allenato un allenatore".ToUpper();
+
+
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                    var listAllenatori = ctx.Allenatori
+                        .Include(q => q.Persona)
+                        .Select(q => new
+                        {
+                            Codice = q.Codice,
+                            Nome = $"{q.Persona.Nome} {q.Persona.Cognome}"
+                        }).ToList();
+                    listAllenatori.Insert(0, new { Codice = 0, Nome = "" });
+                    cbStatistica3.ValueMember = "Codice";
+                    cbStatistica3.DisplayMember = "Nome";
+                    cbStatistica3.DataSource = listAllenatori;
+                }
+            }
         }
 
         private void cbGiocatore_SelectedIndexChanged(object sender, EventArgs e)
@@ -272,18 +298,40 @@ namespace WindowsFormApp
             }
         }
 
+        private void cbStatistica3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((int)cbStatistica3.SelectedValue != 0)
+            {
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                    var query =
+                        (from a in ctx.Allenamenti
+                            join g in ctx.Giocatori on a.CodiceGiocatore equals g.Codice
+                            join p in ctx.Persone on g.CodicePersona equals p.Codice
+                            where a.CodiceAllenatore == (int)cbStatistica3.SelectedValue
+                            select new
+                            {
+                                Nome = p.Nome,
+                                Cognome = p.Cognome
+                            }).Distinct();
+                    dgvStatistica3.DataSource = query.ToList();
+                }
+            }
+            else
+            {
+                dgvStatistica2.DataSource = null;
+            }
+        }
+
+
 
         /*
-        select e.Descrizione,
-        CASE
-            WHEN e2.Codice is not null THEN 'Vincitore'
-            ELSE ""
-        END Vincitore
-        from iscritto i 
-        inner join giocatore g on g.Codice = i.codicegiocatore
-        inner join edizione e on e.codice = i.CodiceEdizione
-        left outer join edizione e2 on e2.CodiceVincitore = i.Codice
-        where g.Codice = 4
+            SELECT distinct Nome, Cognome
+            FROM giocatore g
+            inner join allenamento a on a.CodiceGiocatore = g.Codice
+            inner join Persona p on g.CodicePersona = p.Codice
+            where a.CodiceAllenatore = ?
+
         */
     }
 }

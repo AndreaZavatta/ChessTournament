@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Context.Data;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Crypto.Agreement.JPake;
+using Org.BouncyCastle.Math.EC.Rfc8032;
 
 namespace WindowsFormApp
 {
@@ -216,27 +217,74 @@ namespace WindowsFormApp
 
                     var query =
                         from i in iscrizioni
-                        join tg in ctx.Giocatori on i.CodiceGiocatore equals tg.Codice
-                        join tp in ctx.Persone on tg.CodicePersona equals tp.Codice
+                        join g in ctx.Giocatori on i.CodiceGiocatore equals g.Codice
+                        join p in ctx.Persone on g.CodicePersona equals p.Codice
                         orderby i.numero descending
-                        select new { Nome = tp.Nome, Cognome = tp.Cognome, Partecipazioni = i.numero };
+                        select new { Nome = p.Nome, Cognome = p.Cognome, Partecipazioni = i.numero };
 
                     dgvStats1.DataSource = query.ToList();
                 }
 
             }
+            else if (tabControl1.SelectedTab.Name == "tabStatistica2")
+            {
+                tbStatistica2.Text = "edizioni in cui ha partecipato un giocatore evidenziando quelle in cui ha vinto".ToUpper();
 
+
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                    var listGiocatori = ctx.Giocatori
+                        .Include(q => q.Persona)
+                        .Select(q => new
+                        {
+                            Codice = q.Codice,
+                            Nome = $"{q.Persona.Nome} {q.Persona.Cognome}"
+                        }).ToList();
+                    listGiocatori.Insert(0, new {Codice = 0, Nome = "" });
+                    cbGiocatore.ValueMember = "Codice";
+                    cbGiocatore.DisplayMember = "Nome";
+                    cbGiocatore.DataSource = listGiocatori;
+                }
+            }
         }
 
+        private void cbGiocatore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((int)cbGiocatore.SelectedValue != 0)
+            {
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                    var query =
+                        from i in ctx.Iscritti
+                        join g in ctx.Giocatori on i.CodiceGiocatore equals g.Codice
+                        join ed in ctx.Edizioni on i.CodiceEdizione equals ed.Codice
+                        join e2 in ctx.Edizioni on i.Codice equals e2.CodiceVincitore into edizione
+                        from e2 in edizione.DefaultIfEmpty()
+                        where g.Codice == (int)cbGiocatore.SelectedValue
+                        select new { Edizione = ed.Descrizione, Vincitore = (e2 == null ? "" : "Vincitore") };
+
+                    dgvStatistica2.DataSource = query.ToList();
+                }
+            }
+            else
+            {
+                dgvStatistica2.DataSource = null;
+            }
+        }
+
+
         /*
-   select p.Nome, p.Cognome, numero
-   from (select i.CodiceGiocatore, count(*) numero
-   from iscritto i
-   group by i.CodiceGiocatore ) partecipazioni
-   inner join giocatore g on partecipazioni.CodiceGiocatore = g.Codice
-   inner join persona p on g.CodicePersona = p.Codice
-   order by numero desc
-*/
+        select e.Descrizione,
+        CASE
+            WHEN e2.Codice is not null THEN 'Vincitore'
+            ELSE ""
+        END Vincitore
+        from iscritto i 
+        inner join giocatore g on g.Codice = i.codicegiocatore
+        inner join edizione e on e.codice = i.CodiceEdizione
+        left outer join edizione e2 on e2.CodiceVincitore = i.Codice
+        where g.Codice = 4
+        */
     }
 }
 

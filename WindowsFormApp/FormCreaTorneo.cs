@@ -93,15 +93,16 @@ namespace WindowsFormApp
 
                 List<Luogo> listLuoghi = ctx.Luoghi.ToList();
                 listLuoghi.Insert(0, new Luogo { Nome = "", Codice = 0 });
-                cbLuogo.DataSource = listLuoghi;
                 cbLuogo.ValueMember = "Codice";
                 cbLuogo.DisplayMember = "Nome";
+                cbLuogo.DataSource = listLuoghi;
 
                 List<Torneo> listTornei = ctx.Tornei.ToList();
                 listTornei.Insert(0, new Torneo { Nome = "", Codice = 0 });
-                cbTorneo.DataSource = listTornei;
                 cbTorneo.ValueMember = "Codice";
                 cbTorneo.DisplayMember = "Nome";
+                cbTorneo.DataSource = listTornei;
+
 
             }
         }

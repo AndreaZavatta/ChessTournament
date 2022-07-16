@@ -50,6 +50,8 @@ namespace WindowsFormApp
             this.Cognome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Partecipazioni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabStatistica2 = new System.Windows.Forms.TabPage();
+            this.lblGiocatore = new System.Windows.Forms.Label();
+            this.cbGiocatore = new System.Windows.Forms.ComboBox();
             this.tbStatistica2 = new System.Windows.Forms.TextBox();
             this.dgvStatistica2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +102,7 @@ namespace WindowsFormApp
             this.btnCreaTorneo.TabIndex = 10;
             this.btnCreaTorneo.Text = "Crea torneo";
             this.btnCreaTorneo.UseVisualStyleBackColor = true;
+            this.btnCreaTorneo.Click += new System.EventHandler(this.btnCreaTorneo_Click);
             // 
             // dgvTornei
             // 
@@ -291,6 +294,8 @@ namespace WindowsFormApp
             // 
             // tabStatistica2
             // 
+            this.tabStatistica2.Controls.Add(this.lblGiocatore);
+            this.tabStatistica2.Controls.Add(this.cbGiocatore);
             this.tabStatistica2.Controls.Add(this.tbStatistica2);
             this.tabStatistica2.Controls.Add(this.dgvStatistica2);
             this.tabStatistica2.Location = new System.Drawing.Point(4, 29);
@@ -299,6 +304,24 @@ namespace WindowsFormApp
             this.tabStatistica2.TabIndex = 2;
             this.tabStatistica2.Text = "Statistica 2";
             this.tabStatistica2.UseVisualStyleBackColor = true;
+            // 
+            // lblGiocatore
+            // 
+            this.lblGiocatore.AutoSize = true;
+            this.lblGiocatore.Location = new System.Drawing.Point(54, 105);
+            this.lblGiocatore.Name = "lblGiocatore";
+            this.lblGiocatore.Size = new System.Drawing.Size(74, 20);
+            this.lblGiocatore.TabIndex = 35;
+            this.lblGiocatore.Text = "Giocatore";
+            // 
+            // cbGiocatore
+            // 
+            this.cbGiocatore.FormattingEnabled = true;
+            this.cbGiocatore.Location = new System.Drawing.Point(161, 102);
+            this.cbGiocatore.Name = "cbGiocatore";
+            this.cbGiocatore.Size = new System.Drawing.Size(321, 28);
+            this.cbGiocatore.TabIndex = 34;
+            this.cbGiocatore.SelectedIndexChanged += new System.EventHandler(this.cbGiocatore_SelectedIndexChanged);
             // 
             // tbStatistica2
             // 
@@ -321,11 +344,11 @@ namespace WindowsFormApp
             this.dgvStatistica2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvStatistica2.Location = new System.Drawing.Point(6, 102);
+            this.dgvStatistica2.Location = new System.Drawing.Point(6, 137);
             this.dgvStatistica2.Name = "dgvStatistica2";
             this.dgvStatistica2.RowHeadersWidth = 51;
             this.dgvStatistica2.RowTemplate.Height = 29;
-            this.dgvStatistica2.Size = new System.Drawing.Size(1076, 469);
+            this.dgvStatistica2.Size = new System.Drawing.Size(1076, 438);
             this.dgvStatistica2.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -394,5 +417,7 @@ namespace WindowsFormApp
         private System.Windows.Forms.DataGridView dgvStatistica2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label lblGiocatore;
+        private System.Windows.Forms.ComboBox cbGiocatore;
     }
 }

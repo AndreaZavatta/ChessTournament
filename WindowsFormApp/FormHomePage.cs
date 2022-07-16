@@ -26,6 +26,7 @@ namespace WindowsFormApp
 
         private void FormHomePage_Load(object sender, EventArgs e)
         {
+
             SetVisibility(sender);
             using (MyDbContext ctx = new MyDbContext(_connectionString))
             {
@@ -267,11 +268,30 @@ namespace WindowsFormApp
                             Nome = $"{q.Persona.Nome} {q.Persona.Cognome}"
                         }).ToList();
                     listAllenatori.Insert(0, new { Codice = 0, Nome = "" });
-                    cbStatistica3.ValueMember = "Codice";
-                    cbStatistica3.DisplayMember = "Nome";
-                    cbStatistica3.DataSource = listAllenatori;
+                    cbAllenatore.ValueMember = "Codice";
+                    cbAllenatore.DisplayMember = "Nome";
+                    cbAllenatore.DataSource = listAllenatori;
                 }
             }
+            else if (tabControl1.SelectedTab.Name == "tabClassifica")
+            {
+                tbClassifica.Text = "Classifica dei giocatori in base al rating".ToUpper();
+                using (MyDbContext ctx = new MyDbContext(_connectionString))
+                {
+                        var query =
+                            from g in ctx.Giocatori
+                            join p in ctx.Persone on g.CodicePersona equals p.Codice
+                            orderby g.Rating descending
+                            select new { Nome = p.Nome, Cognome = p.Cognome, Rating = g.Rating};
+                        dgvClassifica.DataSource = query.ToList();
+                }
+
+            }
+            /*  select Nome, Cognome, rating
+                from giocatore g
+                inner join persona p on g.CodicePersona = p.Codice
+                order by rating desc
+            */
         }
 
         private void cbGiocatore_SelectedIndexChanged(object sender, EventArgs e)
@@ -300,7 +320,7 @@ namespace WindowsFormApp
 
         private void cbStatistica3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((int)cbStatistica3.SelectedValue != 0)
+            if ((int)cbAllenatore.SelectedValue != 0)
             {
                 using (MyDbContext ctx = new MyDbContext(_connectionString))
                 {
@@ -308,7 +328,7 @@ namespace WindowsFormApp
                         (from a in ctx.Allenamenti
                             join g in ctx.Giocatori on a.CodiceGiocatore equals g.Codice
                             join p in ctx.Persone on g.CodicePersona equals p.Codice
-                            where a.CodiceAllenatore == (int)cbStatistica3.SelectedValue
+                            where a.CodiceAllenatore == (int)cbAllenatore.SelectedValue
                             select new
                             {
                                 Nome = p.Nome,
@@ -319,20 +339,12 @@ namespace WindowsFormApp
             }
             else
             {
-                dgvStatistica2.DataSource = null;
+                dgvStatistica3.DataSource = null;
             }
         }
 
 
 
-        /*
-            SELECT distinct Nome, Cognome
-            FROM giocatore g
-            inner join allenamento a on a.CodiceGiocatore = g.Codice
-            inner join Persona p on g.CodicePersona = p.Codice
-            where a.CodiceAllenatore = ?
-
-        */
     }
 }
 

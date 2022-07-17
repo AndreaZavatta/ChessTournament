@@ -162,6 +162,5 @@ CREATE TABLE torneo (
   RatingMinimo int DEFAULT NULL,
   RatingMassimo int DEFAULT NULL,
   MaxPartecipanti int DEFAULT NULL,
-  PRIMARY KEY (Codice),
-  UNIQUE KEY Nome_UNIQUE (Nome)
+  PRIMARY KEY (Codice)
 )

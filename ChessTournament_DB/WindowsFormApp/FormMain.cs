@@ -132,7 +132,7 @@ namespace WindowsFormApp
             {
                 Nome = txtNome.Text,
                 Cognome = txtCognome.Text,
-                Email = txtEmail.Text,
+                Email = txtEmailReg.Text,
                 DataNascita = dateTimePicker1.Value,
                 Genere = cmbGenere.Text.Equals("Maschio") ? 0 : 1,
                 Password = Converter.ComputeSha256Hash(txtPassword.Text),

@@ -141,6 +141,15 @@ namespace WindowsFormApp
             };
         }
 
+        private void ClearAll()
+        {
+            txtEmailReg.Text = "";
+            txtNome.Text = "";
+            txtCognome.Text = "";
+            txtPassword.Text = "";
+            txtTelefono.Text = "";
+        }
+
         private void SaveUser()
         {
             try
@@ -157,6 +166,8 @@ namespace WindowsFormApp
                 {
                     SaveCoach();
                 }
+
+                ClearAll();
 
                 MessageBox.Show("Registrazione completata con successo");
                 tabControl1.SelectedTab = tabLogin;

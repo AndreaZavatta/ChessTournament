@@ -323,8 +323,10 @@ CREATE TABLE `mossa` (
   UNIQUE KEY `REF_MOSSA_VINC` (`CodicePartita`,`NumMossa`) /*!80000 INVISIBLE */,
   KEY `REF_MOSSA_PARTITA_FK` (`CodicePartita`),
   KEY `MOSSA_ID` (`CodicePartita`,`NumMossa`) /*!80000 INVISIBLE */,
-  CONSTRAINT `REF_MOSSA_PARTI` FOREIGN KEY (`CodicePartita`) REFERENCES `partita` (`Codice`)
+ CONSTRAINT `REF_MOSSA_PARTI`
+  FOREIGN KEY (`CodicePartita`) REFERENCES `database_chess`.`partita` (`Codice`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 --
 -- Dumping data for table `mossa`

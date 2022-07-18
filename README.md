@@ -10,7 +10,7 @@ Un software per gestire i tornei di scacchi
 - [x] Visualizzare una classifica e delle statistiche in base a parametri in input.
 - [ ] Possibilità da parte dei giocatori di commentare le partite
 - [ ] Prenotazione delle lezioni
-## How to run
+## Come Utilizzare l'applicazione
 * Per prima cosa occorre avere installato mySQL attraverso l'installer al link: https://dev.mysql.com/downloads/installer/
 * Occorre installare uno strumento visuale di progettazione per database ad esempio MySQL Workbench a questo link https://dev.mysql.com/downloads/workbench/
 * Si può procedere alla creazione del database e delle tabelle attraverso il file "create.sql" che trovate nella repo

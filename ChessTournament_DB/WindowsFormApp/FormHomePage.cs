@@ -287,11 +287,7 @@ namespace WindowsFormApp
                 }
 
             }
-            /*  select Nome, Cognome, rating
-                from giocatore g
-                inner join persona p on g.CodicePersona = p.Codice
-                order by rating desc
-            */
+
         }
 
         private void cbGiocatore_SelectedIndexChanged(object sender, EventArgs e)

@@ -339,8 +339,22 @@ namespace WindowsFormApp
             }
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ResetLoggedUser();
+            this.Hide();
+            new FormMain().ShowDialog();
+            this.Close();
+        }
 
-
+        private static void ResetLoggedUser()
+        {
+            LoggedUser.Codice = null;
+            LoggedUser.Cognome = "";
+            LoggedUser.Email = "";
+            LoggedUser.Nome = "";
+            LoggedUser.Tipo = null;
+        }
     }
 }
 

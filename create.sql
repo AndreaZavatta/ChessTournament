@@ -239,7 +239,7 @@ CREATE TABLE `edizione` (
 
 LOCK TABLES `edizione` WRITE;
 
-INSERT INTO `edizione` VALUES (15,25000,'edizione1 Spagna','2023-05-18','2022-07-18',1,2022,6,NULL,8,4),(16,10000,'edizione1 Italia','2023-02-18','2022-07-18',1,2022,7,30,8,3),(17,10500,'edizione2 Spagna','2022-01-28','2023-07-18',2,2022,6,28,10,4),(18,1000000,'edizione1 Germania','2025-07-01','2024-05-12',1,2024,8,31,7,10);
+INSERT INTO `edizione` VALUES (15,25000,'edizione1 Spagna','2023-05-18','2022-07-18',1,2022,6,NULL,8,4),(16,10000,'edizione1 Italia','2023-02-18','2022-07-18',1,2022,7,30,8,3),(17,10500,'edizione2 Spagna','2024-01-28','2023-07-18',2,2022,6,28,10,4),(18,1000000,'edizione1 Germania','2025-07-01','2024-05-12',1,2024,8,31,7,10);
 UNLOCK TABLES;
 
 -- add foreign key, this operation could not be done before because of a circular dependency

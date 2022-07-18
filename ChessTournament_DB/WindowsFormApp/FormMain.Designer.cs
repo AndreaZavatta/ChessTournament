@@ -76,7 +76,7 @@ namespace WindowsFormApp
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(690, 346);
+            this.tabControl1.Size = new System.Drawing.Size(402, 345);
             this.tabControl1.TabIndex = 2;
             // 
             // tabLogin
@@ -89,34 +89,38 @@ namespace WindowsFormApp
             this.tabLogin.Location = new System.Drawing.Point(4, 24);
             this.tabLogin.Name = "tabLogin";
             this.tabLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLogin.Size = new System.Drawing.Size(682, 318);
+            this.tabLogin.Size = new System.Drawing.Size(394, 317);
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Login";
             this.tabLogin.UseVisualStyleBackColor = true;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(208, 133);
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.Location = new System.Drawing.Point(101, 133);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.Size = new System.Drawing.Size(188, 23);
+            this.txtPassword.Size = new System.Drawing.Size(240, 23);
             this.txtPassword.TabIndex = 9;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(208, 96);
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(101, 96);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PlaceholderText = "Email";
-            this.txtEmail.Size = new System.Drawing.Size(188, 23);
+            this.txtEmail.Size = new System.Drawing.Size(240, 23);
             this.txtEmail.TabIndex = 8;
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(141, 135);
+            this.lblPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPassword.Location = new System.Drawing.Point(34, 135);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(57, 15);
             this.lblPassword.TabIndex = 7;
@@ -124,8 +128,10 @@ namespace WindowsFormApp
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(141, 98);
+            this.lblEmail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblEmail.Location = new System.Drawing.Point(34, 98);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(36, 15);
             this.lblEmail.TabIndex = 6;
@@ -133,10 +139,13 @@ namespace WindowsFormApp
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(208, 188);
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLogin.Location = new System.Drawing.Point(101, 188);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.MinimumSize = new System.Drawing.Size(134, 23);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(82, 22);
+            this.btnLogin.Size = new System.Drawing.Size(134, 23);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -168,14 +177,14 @@ namespace WindowsFormApp
             this.tabRegistrazione.Location = new System.Drawing.Point(4, 24);
             this.tabRegistrazione.Name = "tabRegistrazione";
             this.tabRegistrazione.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrazione.Size = new System.Drawing.Size(682, 318);
+            this.tabRegistrazione.Size = new System.Drawing.Size(394, 317);
             this.tabRegistrazione.TabIndex = 1;
             this.tabRegistrazione.Text = "Registrazione";
             this.tabRegistrazione.UseVisualStyleBackColor = true;
             // 
             // txtRating
             // 
-            this.txtRating.Location = new System.Drawing.Point(255, 261);
+            this.txtRating.Location = new System.Drawing.Point(105, 262);
             this.txtRating.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRating.Name = "txtRating";
             this.txtRating.PlaceholderText = "Rating";
@@ -184,7 +193,7 @@ namespace WindowsFormApp
             // 
             // txtFederazione
             // 
-            this.txtFederazione.Location = new System.Drawing.Point(255, 231);
+            this.txtFederazione.Location = new System.Drawing.Point(105, 232);
             this.txtFederazione.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFederazione.Name = "txtFederazione";
             this.txtFederazione.PlaceholderText = "Federazione";
@@ -194,7 +203,8 @@ namespace WindowsFormApp
             // lblRating
             // 
             this.lblRating.AutoSize = true;
-            this.lblRating.Location = new System.Drawing.Point(161, 256);
+            this.lblRating.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblRating.Location = new System.Drawing.Point(11, 257);
             this.lblRating.Name = "lblRating";
             this.lblRating.Size = new System.Drawing.Size(41, 15);
             this.lblRating.TabIndex = 41;
@@ -205,7 +215,8 @@ namespace WindowsFormApp
             // lblFederazione
             // 
             this.lblFederazione.AutoSize = true;
-            this.lblFederazione.Location = new System.Drawing.Point(161, 231);
+            this.lblFederazione.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblFederazione.Location = new System.Drawing.Point(11, 232);
             this.lblFederazione.Name = "lblFederazione";
             this.lblFederazione.Size = new System.Drawing.Size(70, 15);
             this.lblFederazione.TabIndex = 39;
@@ -215,7 +226,8 @@ namespace WindowsFormApp
             // lblGenere
             // 
             this.lblGenere.AutoSize = true;
-            this.lblGenere.Location = new System.Drawing.Point(161, 156);
+            this.lblGenere.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblGenere.Location = new System.Drawing.Point(11, 157);
             this.lblGenere.Name = "lblGenere";
             this.lblGenere.Size = new System.Drawing.Size(44, 15);
             this.lblGenere.TabIndex = 38;
@@ -224,7 +236,8 @@ namespace WindowsFormApp
             // lblTipologia
             // 
             this.lblTipologia.AutoSize = true;
-            this.lblTipologia.Location = new System.Drawing.Point(161, 17);
+            this.lblTipologia.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblTipologia.Location = new System.Drawing.Point(11, 18);
             this.lblTipologia.Name = "lblTipologia";
             this.lblTipologia.Size = new System.Drawing.Size(56, 15);
             this.lblTipologia.TabIndex = 37;
@@ -232,7 +245,8 @@ namespace WindowsFormApp
             // 
             // btnSalva
             // 
-            this.btnSalva.Location = new System.Drawing.Point(255, 288);
+            this.btnSalva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSalva.Location = new System.Drawing.Point(105, 289);
             this.btnSalva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(82, 22);
@@ -243,7 +257,7 @@ namespace WindowsFormApp
             // 
             // txtPasswordReg
             // 
-            this.txtPasswordReg.Location = new System.Drawing.Point(255, 201);
+            this.txtPasswordReg.Location = new System.Drawing.Point(105, 202);
             this.txtPasswordReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPasswordReg.Name = "txtPasswordReg";
             this.txtPasswordReg.PasswordChar = '*';
@@ -254,7 +268,8 @@ namespace WindowsFormApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 206);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(11, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 34;
@@ -262,7 +277,7 @@ namespace WindowsFormApp
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(255, 176);
+            this.dateTimePicker1.Location = new System.Drawing.Point(105, 177);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(274, 23);
@@ -271,7 +286,8 @@ namespace WindowsFormApp
             // lblNascita
             // 
             this.lblNascita.AutoSize = true;
-            this.lblNascita.Location = new System.Drawing.Point(161, 181);
+            this.lblNascita.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblNascita.Location = new System.Drawing.Point(11, 182);
             this.lblNascita.Name = "lblNascita";
             this.lblNascita.Size = new System.Drawing.Size(73, 15);
             this.lblNascita.TabIndex = 32;
@@ -279,7 +295,7 @@ namespace WindowsFormApp
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(255, 126);
+            this.txtTelefono.Location = new System.Drawing.Point(105, 127);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderText = "Telefono";
@@ -289,7 +305,8 @@ namespace WindowsFormApp
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(161, 131);
+            this.lblTelefono.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblTelefono.Location = new System.Drawing.Point(11, 132);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(52, 15);
             this.lblTelefono.TabIndex = 30;
@@ -301,7 +318,7 @@ namespace WindowsFormApp
             this.cmbGenere.Items.AddRange(new object[] {
             "Maschio",
             "Femmina"});
-            this.cmbGenere.Location = new System.Drawing.Point(255, 150);
+            this.cmbGenere.Location = new System.Drawing.Point(105, 151);
             this.cmbGenere.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGenere.Name = "cmbGenere";
             this.cmbGenere.Size = new System.Drawing.Size(274, 23);
@@ -315,7 +332,7 @@ namespace WindowsFormApp
             "Organizzatore",
             "Giocatore",
             "Allenatore"});
-            this.cmbTipologia.Location = new System.Drawing.Point(255, 15);
+            this.cmbTipologia.Location = new System.Drawing.Point(105, 16);
             this.cmbTipologia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTipologia.Name = "cmbTipologia";
             this.cmbTipologia.Size = new System.Drawing.Size(274, 23);
@@ -325,7 +342,7 @@ namespace WindowsFormApp
             // 
             // txtEmailReg
             // 
-            this.txtEmailReg.Location = new System.Drawing.Point(255, 101);
+            this.txtEmailReg.Location = new System.Drawing.Point(105, 102);
             this.txtEmailReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmailReg.Name = "txtEmailReg";
             this.txtEmailReg.PlaceholderText = "Email";
@@ -335,7 +352,8 @@ namespace WindowsFormApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 106);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(11, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 26;
@@ -343,7 +361,7 @@ namespace WindowsFormApp
             // 
             // txtCognome
             // 
-            this.txtCognome.Location = new System.Drawing.Point(255, 76);
+            this.txtCognome.Location = new System.Drawing.Point(105, 77);
             this.txtCognome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCognome.Name = "txtCognome";
             this.txtCognome.PlaceholderText = "Cognome";
@@ -353,7 +371,8 @@ namespace WindowsFormApp
             // lblCognome
             // 
             this.lblCognome.AutoSize = true;
-            this.lblCognome.Location = new System.Drawing.Point(161, 82);
+            this.lblCognome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCognome.Location = new System.Drawing.Point(11, 83);
             this.lblCognome.Name = "lblCognome";
             this.lblCognome.Size = new System.Drawing.Size(60, 15);
             this.lblCognome.TabIndex = 24;
@@ -361,7 +380,7 @@ namespace WindowsFormApp
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(255, 52);
+            this.txtNome.Location = new System.Drawing.Point(105, 53);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.Name = "txtNome";
             this.txtNome.PlaceholderText = "Nome";
@@ -371,7 +390,8 @@ namespace WindowsFormApp
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(161, 57);
+            this.lblNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblNome.Location = new System.Drawing.Point(11, 58);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(40, 15);
             this.lblNome.TabIndex = 22;
@@ -381,11 +401,11 @@ namespace WindowsFormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 370);
+            this.ClientSize = new System.Drawing.Size(427, 369);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
-            this.Text = "Main";
             this.tabControl1.ResumeLayout(false);
             this.tabLogin.ResumeLayout(false);
             this.tabLogin.PerformLayout();

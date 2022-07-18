@@ -51,162 +51,189 @@ namespace WindowsFormApp
             // 
             // lblLuogo
             // 
+            this.lblLuogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblLuogo.AutoSize = true;
-            this.lblLuogo.Location = new System.Drawing.Point(172, 350);
+            this.lblLuogo.Location = new System.Drawing.Point(10, 262);
             this.lblLuogo.Name = "lblLuogo";
-            this.lblLuogo.Size = new System.Drawing.Size(51, 20);
+            this.lblLuogo.Size = new System.Drawing.Size(41, 15);
             this.lblLuogo.TabIndex = 46;
             this.lblLuogo.Text = "Luogo";
             // 
             // lblOrganizzatore
             // 
+            this.lblOrganizzatore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblOrganizzatore.AutoSize = true;
-            this.lblOrganizzatore.Location = new System.Drawing.Point(172, 317);
+            this.lblOrganizzatore.Location = new System.Drawing.Point(10, 238);
             this.lblOrganizzatore.Name = "lblOrganizzatore";
-            this.lblOrganizzatore.Size = new System.Drawing.Size(103, 20);
+            this.lblOrganizzatore.Size = new System.Drawing.Size(80, 15);
             this.lblOrganizzatore.TabIndex = 45;
             this.lblOrganizzatore.Text = "Organizzatore";
             // 
             // lblVincitore
             // 
+            this.lblVincitore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblVincitore.AutoSize = true;
-            this.lblVincitore.Location = new System.Drawing.Point(172, 284);
+            this.lblVincitore.Location = new System.Drawing.Point(10, 213);
             this.lblVincitore.Name = "lblVincitore";
-            this.lblVincitore.Size = new System.Drawing.Size(68, 20);
+            this.lblVincitore.Size = new System.Drawing.Size(54, 15);
             this.lblVincitore.TabIndex = 44;
             this.lblVincitore.Text = "Vincitore";
             // 
             // txtAnno
             // 
+            this.txtAnno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtAnno.Enabled = false;
-            this.txtAnno.Location = new System.Drawing.Point(308, 244);
+            this.txtAnno.Location = new System.Drawing.Point(130, 183);
+            this.txtAnno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAnno.Name = "txtAnno";
-            this.txtAnno.Size = new System.Drawing.Size(321, 27);
+            this.txtAnno.Size = new System.Drawing.Size(221, 23);
             this.txtAnno.TabIndex = 40;
             // 
             // lblAnno
             // 
+            this.lblAnno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblAnno.AutoSize = true;
-            this.lblAnno.Location = new System.Drawing.Point(172, 246);
+            this.lblAnno.Location = new System.Drawing.Point(10, 184);
             this.lblAnno.Name = "lblAnno";
-            this.lblAnno.Size = new System.Drawing.Size(44, 20);
+            this.lblAnno.Size = new System.Drawing.Size(36, 15);
             this.lblAnno.TabIndex = 39;
             this.lblAnno.Text = "Anno";
             // 
             // txtNumeroEdizione
             // 
+            this.txtNumeroEdizione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNumeroEdizione.Enabled = false;
-            this.txtNumeroEdizione.Location = new System.Drawing.Point(308, 210);
+            this.txtNumeroEdizione.Location = new System.Drawing.Point(130, 158);
+            this.txtNumeroEdizione.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumeroEdizione.Name = "txtNumeroEdizione";
-            this.txtNumeroEdizione.Size = new System.Drawing.Size(321, 27);
+            this.txtNumeroEdizione.Size = new System.Drawing.Size(221, 23);
             this.txtNumeroEdizione.TabIndex = 38;
             // 
             // lblNumEdizione
             // 
+            this.lblNumEdizione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblNumEdizione.AutoSize = true;
-            this.lblNumEdizione.Location = new System.Drawing.Point(172, 213);
+            this.lblNumEdizione.Location = new System.Drawing.Point(10, 160);
             this.lblNumEdizione.Name = "lblNumEdizione";
-            this.lblNumEdizione.Size = new System.Drawing.Size(124, 20);
+            this.lblNumEdizione.Size = new System.Drawing.Size(98, 15);
             this.lblNumEdizione.TabIndex = 37;
             this.lblNumEdizione.Text = "Numero edizione";
             // 
             // lblDataFine
             // 
+            this.lblDataFine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblDataFine.AutoSize = true;
-            this.lblDataFine.Location = new System.Drawing.Point(172, 180);
+            this.lblDataFine.Location = new System.Drawing.Point(10, 135);
             this.lblDataFine.Name = "lblDataFine";
-            this.lblDataFine.Size = new System.Drawing.Size(72, 20);
+            this.lblDataFine.Size = new System.Drawing.Size(56, 15);
             this.lblDataFine.TabIndex = 35;
             this.lblDataFine.Text = "Data Fine";
             // 
             // lblDataInizio
             // 
+            this.lblDataInizio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblDataInizio.AutoSize = true;
-            this.lblDataInizio.Location = new System.Drawing.Point(172, 148);
+            this.lblDataInizio.Location = new System.Drawing.Point(10, 111);
             this.lblDataInizio.Name = "lblDataInizio";
-            this.lblDataInizio.Size = new System.Drawing.Size(81, 20);
+            this.lblDataInizio.Size = new System.Drawing.Size(62, 15);
             this.lblDataInizio.TabIndex = 33;
             this.lblDataInizio.Text = "Data inizio";
             // 
             // txtDescrizione
             // 
+            this.txtDescrizione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtDescrizione.Enabled = false;
-            this.txtDescrizione.Location = new System.Drawing.Point(308, 78);
+            this.txtDescrizione.Location = new System.Drawing.Point(130, 58);
+            this.txtDescrizione.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescrizione.Name = "txtDescrizione";
-            this.txtDescrizione.Size = new System.Drawing.Size(321, 27);
+            this.txtDescrizione.Size = new System.Drawing.Size(221, 23);
             this.txtDescrizione.TabIndex = 32;
             // 
             // lblDescrizione
             // 
+            this.lblDescrizione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblDescrizione.AutoSize = true;
-            this.lblDescrizione.Location = new System.Drawing.Point(172, 81);
+            this.lblDescrizione.Location = new System.Drawing.Point(10, 61);
             this.lblDescrizione.Name = "lblDescrizione";
-            this.lblDescrizione.Size = new System.Drawing.Size(86, 20);
+            this.lblDescrizione.Size = new System.Drawing.Size(67, 15);
             this.lblDescrizione.TabIndex = 31;
             this.lblDescrizione.Text = "Descrizione";
             // 
             // txtPremio
             // 
+            this.txtPremio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPremio.Enabled = false;
-            this.txtPremio.Location = new System.Drawing.Point(308, 111);
+            this.txtPremio.Location = new System.Drawing.Point(130, 83);
+            this.txtPremio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPremio.Name = "txtPremio";
-            this.txtPremio.Size = new System.Drawing.Size(321, 27);
+            this.txtPremio.Size = new System.Drawing.Size(221, 23);
             this.txtPremio.TabIndex = 30;
             // 
             // lblPremio
             // 
+            this.lblPremio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblPremio.AutoSize = true;
-            this.lblPremio.Location = new System.Drawing.Point(172, 114);
+            this.lblPremio.Location = new System.Drawing.Point(10, 86);
             this.lblPremio.Name = "lblPremio";
-            this.lblPremio.Size = new System.Drawing.Size(103, 20);
+            this.lblPremio.Size = new System.Drawing.Size(83, 15);
             this.lblPremio.TabIndex = 29;
             this.lblPremio.Text = "Premio vincita";
             // 
             // txtDataFine
             // 
+            this.txtDataFine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtDataFine.Enabled = false;
-            this.txtDataFine.Location = new System.Drawing.Point(308, 176);
+            this.txtDataFine.Location = new System.Drawing.Point(130, 132);
+            this.txtDataFine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDataFine.Name = "txtDataFine";
-            this.txtDataFine.Size = new System.Drawing.Size(321, 27);
+            this.txtDataFine.Size = new System.Drawing.Size(221, 23);
             this.txtDataFine.TabIndex = 48;
             // 
             // txtDataInizio
             // 
+            this.txtDataInizio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtDataInizio.Enabled = false;
-            this.txtDataInizio.Location = new System.Drawing.Point(308, 144);
+            this.txtDataInizio.Location = new System.Drawing.Point(130, 108);
+            this.txtDataInizio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDataInizio.Name = "txtDataInizio";
-            this.txtDataInizio.Size = new System.Drawing.Size(321, 27);
+            this.txtDataInizio.Size = new System.Drawing.Size(221, 23);
             this.txtDataInizio.TabIndex = 47;
             // 
             // txtOrganizzatore
             // 
+            this.txtOrganizzatore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtOrganizzatore.Enabled = false;
-            this.txtOrganizzatore.Location = new System.Drawing.Point(308, 313);
+            this.txtOrganizzatore.Location = new System.Drawing.Point(130, 235);
+            this.txtOrganizzatore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOrganizzatore.Name = "txtOrganizzatore";
-            this.txtOrganizzatore.Size = new System.Drawing.Size(321, 27);
+            this.txtOrganizzatore.Size = new System.Drawing.Size(221, 23);
             this.txtOrganizzatore.TabIndex = 50;
             // 
             // txtVincitore
             // 
+            this.txtVincitore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtVincitore.Enabled = false;
-            this.txtVincitore.Location = new System.Drawing.Point(308, 281);
+            this.txtVincitore.Location = new System.Drawing.Point(130, 211);
+            this.txtVincitore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVincitore.Name = "txtVincitore";
-            this.txtVincitore.Size = new System.Drawing.Size(321, 27);
+            this.txtVincitore.Size = new System.Drawing.Size(221, 23);
             this.txtVincitore.TabIndex = 49;
             // 
             // txtLuogo
             // 
+            this.txtLuogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtLuogo.Enabled = false;
-            this.txtLuogo.Location = new System.Drawing.Point(308, 347);
+            this.txtLuogo.Location = new System.Drawing.Point(130, 260);
+            this.txtLuogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLuogo.Name = "txtLuogo";
-            this.txtLuogo.Size = new System.Drawing.Size(321, 27);
+            this.txtLuogo.Size = new System.Drawing.Size(221, 23);
             this.txtLuogo.TabIndex = 51;
             // 
             // FormDettaglioEdzione
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(458, 338);
             this.Controls.Add(this.txtLuogo);
             this.Controls.Add(this.txtOrganizzatore);
             this.Controls.Add(this.txtVincitore);
@@ -225,6 +252,8 @@ namespace WindowsFormApp
             this.Controls.Add(this.lblDescrizione);
             this.Controls.Add(this.txtPremio);
             this.Controls.Add(this.lblPremio);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(474, 377);
             this.Name = "FormDettaglioEdzione";
             this.Text = "FormDettaglioEdzione";
             this.Load += new System.EventHandler(this.FormDettaglioEdzione_Load);

@@ -56,6 +56,7 @@ namespace WindowsFormApp
             this.Cognome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Partecipazioni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTornei = new System.Windows.Forms.TabPage();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnCreaTorneo = new System.Windows.Forms.Button();
             this.dgvTornei = new System.Windows.Forms.DataGridView();
             this.Codice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,7 +91,7 @@ namespace WindowsFormApp
             this.tabClassifica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabClassifica.Name = "tabClassifica";
             this.tabClassifica.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabClassifica.Size = new System.Drawing.Size(951, 426);
+            this.tabClassifica.Size = new System.Drawing.Size(1008, 426);
             this.tabClassifica.TabIndex = 4;
             this.tabClassifica.Text = "Classifica";
             this.tabClassifica.UseVisualStyleBackColor = true;
@@ -159,7 +160,7 @@ namespace WindowsFormApp
             this.tabStatistica3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabStatistica3.Name = "tabStatistica3";
             this.tabStatistica3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabStatistica3.Size = new System.Drawing.Size(951, 426);
+            this.tabStatistica3.Size = new System.Drawing.Size(1008, 426);
             this.tabStatistica3.TabIndex = 3;
             this.tabStatistica3.Text = "Statistica 3";
             this.tabStatistica3.UseVisualStyleBackColor = true;
@@ -239,7 +240,7 @@ namespace WindowsFormApp
             this.tabStatistica2.Location = new System.Drawing.Point(4, 24);
             this.tabStatistica2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabStatistica2.Name = "tabStatistica2";
-            this.tabStatistica2.Size = new System.Drawing.Size(951, 426);
+            this.tabStatistica2.Size = new System.Drawing.Size(1008, 426);
             this.tabStatistica2.TabIndex = 2;
             this.tabStatistica2.Text = "Statistica 2";
             this.tabStatistica2.UseVisualStyleBackColor = true;
@@ -318,7 +319,7 @@ namespace WindowsFormApp
             this.tabStatistica1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabStatistica1.Name = "tabStatistica1";
             this.tabStatistica1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabStatistica1.Size = new System.Drawing.Size(951, 426);
+            this.tabStatistica1.Size = new System.Drawing.Size(1008, 426);
             this.tabStatistica1.TabIndex = 1;
             this.tabStatistica1.Text = "Statistica 1";
             this.tabStatistica1.UseVisualStyleBackColor = true;
@@ -381,6 +382,7 @@ namespace WindowsFormApp
             // 
             // tabTornei
             // 
+            this.tabTornei.Controls.Add(this.btnLogout);
             this.tabTornei.Controls.Add(this.btnCreaTorneo);
             this.tabTornei.Controls.Add(this.dgvTornei);
             this.tabTornei.Controls.Add(this.lblTorneo);
@@ -389,10 +391,21 @@ namespace WindowsFormApp
             this.tabTornei.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabTornei.Name = "tabTornei";
             this.tabTornei.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabTornei.Size = new System.Drawing.Size(951, 426);
+            this.tabTornei.Size = new System.Drawing.Size(1008, 426);
             this.tabTornei.TabIndex = 0;
             this.tabTornei.Text = "Tornei";
             this.tabTornei.UseVisualStyleBackColor = true;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Location = new System.Drawing.Point(940, 6);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(62, 23);
+            this.btnLogout.TabIndex = 11;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnCreaTorneo
             // 
@@ -425,7 +438,7 @@ namespace WindowsFormApp
             this.dgvTornei.Name = "dgvTornei";
             this.dgvTornei.RowHeadersWidth = 51;
             this.dgvTornei.RowTemplate.Height = 29;
-            this.dgvTornei.Size = new System.Drawing.Size(931, 388);
+            this.dgvTornei.Size = new System.Drawing.Size(988, 388);
             this.dgvTornei.TabIndex = 7;
             this.dgvTornei.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTornei_CellContentClick);
             // 
@@ -547,7 +560,7 @@ namespace WindowsFormApp
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(959, 454);
+            this.tabControl1.Size = new System.Drawing.Size(1016, 454);
             this.tabControl1.TabIndex = 7;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -555,9 +568,10 @@ namespace WindowsFormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 470);
+            this.ClientSize = new System.Drawing.Size(1031, 470);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(707, 509);
             this.Name = "FormHomePage";
             this.Text = "HomePage";
             this.Load += new System.EventHandler(this.FormHomePage_Load);
@@ -623,5 +637,6 @@ namespace WindowsFormApp
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

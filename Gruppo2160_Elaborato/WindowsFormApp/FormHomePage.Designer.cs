@@ -87,11 +87,10 @@ namespace WindowsFormApp
             // 
             this.tabClassifica.Controls.Add(this.tbClassifica);
             this.tabClassifica.Controls.Add(this.dgvClassifica);
-            this.tabClassifica.Location = new System.Drawing.Point(4, 24);
-            this.tabClassifica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabClassifica.Location = new System.Drawing.Point(4, 29);
             this.tabClassifica.Name = "tabClassifica";
-            this.tabClassifica.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabClassifica.Size = new System.Drawing.Size(1008, 426);
+            this.tabClassifica.Padding = new System.Windows.Forms.Padding(3);
+            this.tabClassifica.Size = new System.Drawing.Size(1107, 572);
             this.tabClassifica.TabIndex = 4;
             this.tabClassifica.Text = "Classifica";
             this.tabClassifica.UseVisualStyleBackColor = true;
@@ -102,12 +101,11 @@ namespace WindowsFormApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbClassifica.BackColor = System.Drawing.Color.White;
             this.tbClassifica.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbClassifica.Location = new System.Drawing.Point(5, 2);
-            this.tbClassifica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbClassifica.Location = new System.Drawing.Point(6, 3);
             this.tbClassifica.Multiline = true;
             this.tbClassifica.Name = "tbClassifica";
             this.tbClassifica.ReadOnly = true;
-            this.tbClassifica.Size = new System.Drawing.Size(942, 71);
+            this.tbClassifica.Size = new System.Drawing.Size(1095, 93);
             this.tbClassifica.TabIndex = 45;
             this.tbClassifica.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -118,12 +116,11 @@ namespace WindowsFormApp
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.Rating});
-            this.dgvClassifica.Location = new System.Drawing.Point(5, 76);
-            this.dgvClassifica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClassifica.Location = new System.Drawing.Point(6, 103);
             this.dgvClassifica.Name = "dgvClassifica";
             this.dgvClassifica.RowHeadersWidth = 51;
             this.dgvClassifica.RowTemplate.Height = 29;
-            this.dgvClassifica.Size = new System.Drawing.Size(942, 352);
+            this.dgvClassifica.Size = new System.Drawing.Size(1098, 468);
             this.dgvClassifica.TabIndex = 44;
             // 
             // dataGridViewTextBoxColumn5
@@ -156,11 +153,10 @@ namespace WindowsFormApp
             this.tabStatistica3.Controls.Add(this.cbAllenatore);
             this.tabStatistica3.Controls.Add(this.tbStatistica3);
             this.tabStatistica3.Controls.Add(this.dgvStatistica3);
-            this.tabStatistica3.Location = new System.Drawing.Point(4, 24);
-            this.tabStatistica3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabStatistica3.Location = new System.Drawing.Point(4, 29);
             this.tabStatistica3.Name = "tabStatistica3";
-            this.tabStatistica3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabStatistica3.Size = new System.Drawing.Size(1008, 426);
+            this.tabStatistica3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStatistica3.Size = new System.Drawing.Size(1107, 572);
             this.tabStatistica3.TabIndex = 3;
             this.tabStatistica3.Text = "Statistica 3";
             this.tabStatistica3.UseVisualStyleBackColor = true;
@@ -168,19 +164,18 @@ namespace WindowsFormApp
             // lblStatistica3
             // 
             this.lblStatistica3.AutoSize = true;
-            this.lblStatistica3.Location = new System.Drawing.Point(54, 77);
+            this.lblStatistica3.Location = new System.Drawing.Point(62, 103);
             this.lblStatistica3.Name = "lblStatistica3";
-            this.lblStatistica3.Size = new System.Drawing.Size(61, 15);
+            this.lblStatistica3.Size = new System.Drawing.Size(78, 20);
             this.lblStatistica3.TabIndex = 39;
             this.lblStatistica3.Text = "Allenatore";
             // 
             // cbAllenatore
             // 
             this.cbAllenatore.FormattingEnabled = true;
-            this.cbAllenatore.Location = new System.Drawing.Point(148, 75);
-            this.cbAllenatore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbAllenatore.Location = new System.Drawing.Point(169, 100);
             this.cbAllenatore.Name = "cbAllenatore";
-            this.cbAllenatore.Size = new System.Drawing.Size(281, 23);
+            this.cbAllenatore.Size = new System.Drawing.Size(321, 28);
             this.cbAllenatore.TabIndex = 38;
             this.cbAllenatore.SelectedIndexChanged += new System.EventHandler(this.cbStatistica3_SelectedIndexChanged);
             // 
@@ -190,12 +185,11 @@ namespace WindowsFormApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbStatistica3.BackColor = System.Drawing.Color.White;
             this.tbStatistica3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbStatistica3.Location = new System.Drawing.Point(5, 1);
-            this.tbStatistica3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbStatistica3.Location = new System.Drawing.Point(6, 1);
             this.tbStatistica3.Multiline = true;
             this.tbStatistica3.Name = "tbStatistica3";
             this.tbStatistica3.ReadOnly = true;
-            this.tbStatistica3.Size = new System.Drawing.Size(942, 71);
+            this.tbStatistica3.Size = new System.Drawing.Size(1098, 93);
             this.tbStatistica3.TabIndex = 37;
             this.tbStatistica3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -207,12 +201,11 @@ namespace WindowsFormApp
             this.dgvStatistica3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgvStatistica3.Location = new System.Drawing.Point(5, 118);
-            this.dgvStatistica3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvStatistica3.Location = new System.Drawing.Point(6, 157);
             this.dgvStatistica3.Name = "dgvStatistica3";
             this.dgvStatistica3.RowHeadersWidth = 51;
             this.dgvStatistica3.RowTemplate.Height = 29;
-            this.dgvStatistica3.Size = new System.Drawing.Size(942, 302);
+            this.dgvStatistica3.Size = new System.Drawing.Size(1095, 403);
             this.dgvStatistica3.TabIndex = 36;
             // 
             // dataGridViewTextBoxColumn3
@@ -237,10 +230,9 @@ namespace WindowsFormApp
             this.tabStatistica2.Controls.Add(this.cbGiocatore);
             this.tabStatistica2.Controls.Add(this.tbStatistica2);
             this.tabStatistica2.Controls.Add(this.dgvStatistica2);
-            this.tabStatistica2.Location = new System.Drawing.Point(4, 24);
-            this.tabStatistica2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabStatistica2.Location = new System.Drawing.Point(4, 29);
             this.tabStatistica2.Name = "tabStatistica2";
-            this.tabStatistica2.Size = new System.Drawing.Size(1008, 426);
+            this.tabStatistica2.Size = new System.Drawing.Size(1107, 572);
             this.tabStatistica2.TabIndex = 2;
             this.tabStatistica2.Text = "Statistica 2";
             this.tabStatistica2.UseVisualStyleBackColor = true;
@@ -248,19 +240,18 @@ namespace WindowsFormApp
             // lblGiocatore
             // 
             this.lblGiocatore.AutoSize = true;
-            this.lblGiocatore.Location = new System.Drawing.Point(47, 79);
+            this.lblGiocatore.Location = new System.Drawing.Point(54, 105);
             this.lblGiocatore.Name = "lblGiocatore";
-            this.lblGiocatore.Size = new System.Drawing.Size(58, 15);
+            this.lblGiocatore.Size = new System.Drawing.Size(74, 20);
             this.lblGiocatore.TabIndex = 35;
             this.lblGiocatore.Text = "Giocatore";
             // 
             // cbGiocatore
             // 
             this.cbGiocatore.FormattingEnabled = true;
-            this.cbGiocatore.Location = new System.Drawing.Point(141, 76);
-            this.cbGiocatore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbGiocatore.Location = new System.Drawing.Point(161, 101);
             this.cbGiocatore.Name = "cbGiocatore";
-            this.cbGiocatore.Size = new System.Drawing.Size(281, 23);
+            this.cbGiocatore.Size = new System.Drawing.Size(321, 28);
             this.cbGiocatore.TabIndex = 34;
             this.cbGiocatore.SelectedIndexChanged += new System.EventHandler(this.cbGiocatore_SelectedIndexChanged);
             // 
@@ -270,29 +261,25 @@ namespace WindowsFormApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbStatistica2.BackColor = System.Drawing.Color.White;
             this.tbStatistica2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbStatistica2.Location = new System.Drawing.Point(5, 2);
-            this.tbStatistica2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbStatistica2.Location = new System.Drawing.Point(6, 3);
             this.tbStatistica2.Multiline = true;
             this.tbStatistica2.Name = "tbStatistica2";
             this.tbStatistica2.ReadOnly = true;
-            this.tbStatistica2.Size = new System.Drawing.Size(942, 71);
+            this.tbStatistica2.Size = new System.Drawing.Size(1098, 93);
             this.tbStatistica2.TabIndex = 3;
             this.tbStatistica2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvStatistica2
             // 
-            this.dgvStatistica2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStatistica2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStatistica2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvStatistica2.Location = new System.Drawing.Point(5, 116);
-            this.dgvStatistica2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvStatistica2.Location = new System.Drawing.Point(6, 155);
             this.dgvStatistica2.Name = "dgvStatistica2";
             this.dgvStatistica2.RowHeadersWidth = 51;
             this.dgvStatistica2.RowTemplate.Height = 29;
-            this.dgvStatistica2.Size = new System.Drawing.Size(942, 315);
+            this.dgvStatistica2.Size = new System.Drawing.Size(1098, 420);
             this.dgvStatistica2.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -315,11 +302,10 @@ namespace WindowsFormApp
             // 
             this.tabStatistica1.Controls.Add(this.tbStatistica1);
             this.tabStatistica1.Controls.Add(this.dgvStats1);
-            this.tabStatistica1.Location = new System.Drawing.Point(4, 24);
-            this.tabStatistica1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabStatistica1.Location = new System.Drawing.Point(4, 29);
             this.tabStatistica1.Name = "tabStatistica1";
-            this.tabStatistica1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabStatistica1.Size = new System.Drawing.Size(1008, 426);
+            this.tabStatistica1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStatistica1.Size = new System.Drawing.Size(1107, 572);
             this.tabStatistica1.TabIndex = 1;
             this.tabStatistica1.Text = "Statistica 1";
             this.tabStatistica1.UseVisualStyleBackColor = true;
@@ -330,30 +316,29 @@ namespace WindowsFormApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbStatistica1.BackColor = System.Drawing.Color.White;
             this.tbStatistica1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbStatistica1.Location = new System.Drawing.Point(5, 2);
-            this.tbStatistica1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbStatistica1.Location = new System.Drawing.Point(6, 6);
             this.tbStatistica1.Multiline = true;
             this.tbStatistica1.Name = "tbStatistica1";
             this.tbStatistica1.ReadOnly = true;
-            this.tbStatistica1.Size = new System.Drawing.Size(942, 71);
+            this.tbStatistica1.Size = new System.Drawing.Size(1095, 90);
             this.tbStatistica1.TabIndex = 1;
             this.tbStatistica1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvStats1
             // 
-            this.dgvStats1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvStats1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStats1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStats1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.Cognome,
             this.Partecipazioni});
-            this.dgvStats1.Location = new System.Drawing.Point(5, 76);
-            this.dgvStats1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvStats1.Location = new System.Drawing.Point(6, 120);
             this.dgvStats1.Name = "dgvStats1";
             this.dgvStats1.RowHeadersWidth = 51;
             this.dgvStats1.RowTemplate.Height = 29;
-            this.dgvStats1.Size = new System.Drawing.Size(942, 352);
+            this.dgvStats1.Size = new System.Drawing.Size(1095, 446);
             this.dgvStats1.TabIndex = 0;
             // 
             // Nome
@@ -387,11 +372,10 @@ namespace WindowsFormApp
             this.tabTornei.Controls.Add(this.dgvTornei);
             this.tabTornei.Controls.Add(this.lblTorneo);
             this.tabTornei.Controls.Add(this.cbTorneo);
-            this.tabTornei.Location = new System.Drawing.Point(4, 24);
-            this.tabTornei.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabTornei.Location = new System.Drawing.Point(4, 29);
             this.tabTornei.Name = "tabTornei";
-            this.tabTornei.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabTornei.Size = new System.Drawing.Size(1008, 426);
+            this.tabTornei.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTornei.Size = new System.Drawing.Size(1107, 572);
             this.tabTornei.TabIndex = 0;
             this.tabTornei.Text = "Tornei";
             this.tabTornei.UseVisualStyleBackColor = true;
@@ -399,9 +383,10 @@ namespace WindowsFormApp
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.Location = new System.Drawing.Point(940, 6);
+            this.btnLogout.Location = new System.Drawing.Point(1028, 8);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(62, 23);
+            this.btnLogout.Size = new System.Drawing.Size(71, 31);
             this.btnLogout.TabIndex = 11;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -409,10 +394,9 @@ namespace WindowsFormApp
             // 
             // btnCreaTorneo
             // 
-            this.btnCreaTorneo.Location = new System.Drawing.Point(498, 10);
-            this.btnCreaTorneo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreaTorneo.Location = new System.Drawing.Point(569, 13);
             this.btnCreaTorneo.Name = "btnCreaTorneo";
-            this.btnCreaTorneo.Size = new System.Drawing.Size(88, 22);
+            this.btnCreaTorneo.Size = new System.Drawing.Size(101, 29);
             this.btnCreaTorneo.TabIndex = 10;
             this.btnCreaTorneo.Text = "Crea torneo";
             this.btnCreaTorneo.UseVisualStyleBackColor = true;
@@ -433,12 +417,11 @@ namespace WindowsFormApp
             this.Details,
             this.Partecipa,
             this.Elimina});
-            this.dgvTornei.Location = new System.Drawing.Point(16, 37);
-            this.dgvTornei.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTornei.Location = new System.Drawing.Point(7, 51);
             this.dgvTornei.Name = "dgvTornei";
             this.dgvTornei.RowHeadersWidth = 51;
             this.dgvTornei.RowTemplate.Height = 29;
-            this.dgvTornei.Size = new System.Drawing.Size(988, 388);
+            this.dgvTornei.Size = new System.Drawing.Size(1095, 512);
             this.dgvTornei.TabIndex = 7;
             this.dgvTornei.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTornei_CellContentClick);
             // 
@@ -450,7 +433,7 @@ namespace WindowsFormApp
             this.Codice.MinimumWidth = 6;
             this.Codice.Name = "Codice";
             this.Codice.ReadOnly = true;
-            this.Codice.Width = 69;
+            this.Codice.Width = 84;
             // 
             // Descrizione
             // 
@@ -469,7 +452,7 @@ namespace WindowsFormApp
             this.NumEdizione.MinimumWidth = 6;
             this.NumEdizione.Name = "NumEdizione";
             this.NumEdizione.ReadOnly = true;
-            this.NumEdizione.Width = 113;
+            this.NumEdizione.Width = 140;
             // 
             // DataInizio
             // 
@@ -479,7 +462,7 @@ namespace WindowsFormApp
             this.DataInizio.MinimumWidth = 6;
             this.DataInizio.Name = "DataInizio";
             this.DataInizio.ReadOnly = true;
-            this.DataInizio.Width = 80;
+            this.DataInizio.Width = 101;
             // 
             // DataFine
             // 
@@ -489,7 +472,7 @@ namespace WindowsFormApp
             this.DataFine.MinimumWidth = 6;
             this.DataFine.Name = "DataFine";
             this.DataFine.ReadOnly = true;
-            this.DataFine.Width = 73;
+            this.DataFine.Width = 92;
             // 
             // Details
             // 
@@ -529,19 +512,18 @@ namespace WindowsFormApp
             // lblTorneo
             // 
             this.lblTorneo.AutoSize = true;
-            this.lblTorneo.Location = new System.Drawing.Point(16, 14);
+            this.lblTorneo.Location = new System.Drawing.Point(18, 19);
             this.lblTorneo.Name = "lblTorneo";
-            this.lblTorneo.Size = new System.Drawing.Size(43, 15);
+            this.lblTorneo.Size = new System.Drawing.Size(55, 20);
             this.lblTorneo.TabIndex = 9;
             this.lblTorneo.Text = "Torneo";
             // 
             // cbTorneo
             // 
             this.cbTorneo.FormattingEnabled = true;
-            this.cbTorneo.Location = new System.Drawing.Point(69, 11);
-            this.cbTorneo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbTorneo.Location = new System.Drawing.Point(79, 15);
             this.cbTorneo.Name = "cbTorneo";
-            this.cbTorneo.Size = new System.Drawing.Size(261, 23);
+            this.cbTorneo.Size = new System.Drawing.Size(298, 28);
             this.cbTorneo.TabIndex = 8;
             this.cbTorneo.SelectedIndexChanged += new System.EventHandler(this.cbTorneo_SelectedIndexChanged);
             // 
@@ -555,23 +537,21 @@ namespace WindowsFormApp
             this.tabControl1.Controls.Add(this.tabStatistica1);
             this.tabControl1.Controls.Add(this.tabStatistica2);
             this.tabControl1.Controls.Add(this.tabStatistica3);
-            this.tabControl1.Location = new System.Drawing.Point(10, 11);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(11, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1016, 454);
+            this.tabControl1.Size = new System.Drawing.Size(1115, 605);
             this.tabControl1.TabIndex = 7;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // FormHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 470);
+            this.ClientSize = new System.Drawing.Size(1132, 627);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(707, 509);
+            this.MinimumSize = new System.Drawing.Size(805, 663);
             this.Name = "FormHomePage";
             this.Text = "HomePage";
             this.Load += new System.EventHandler(this.FormHomePage_Load);

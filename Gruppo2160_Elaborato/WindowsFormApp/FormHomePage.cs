@@ -80,25 +80,29 @@ namespace WindowsFormApp
         private void dgvTornei_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-            int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
-            if (IsColumnDetails(e, dgv))
+            if (e.RowIndex >= 0)
             {
-                new FormDettaglioEdzione(codice).ShowDialog();
-            }
-            else if (IsColumnElimina(e, dgv))
-            {
-                DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler eliminare questa edizione?", "Eliminazione", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                int codice = (int)dgv.Rows[e.RowIndex].Cells[dgv.Columns["Codice"].Index].Value;
+                if (IsColumnDetails(e, dgv))
                 {
-                    EliminazioneEdizione(codice);
-                    MessageBox.Show("Salvataggio avvenuto correttamente");
+                    new FormDettaglioEdzione(codice).ShowDialog();
+                }
+                else if (IsColumnElimina(e, dgv))
+                {
+                    DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler eliminare questa edizione?",
+                        "Eliminazione", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        EliminazioneEdizione(codice);
+                        MessageBox.Show("Salvataggio avvenuto correttamente");
+                    }
+
                 }
 
-            }
-
-            else if (IsColumnPartecipa(e, dgv))
-            {
-                IscrizioneEdizione(codice);
+                else if (IsColumnPartecipa(e, dgv))
+                {
+                    IscrizioneEdizione(codice);
+                }
             }
         }
 
